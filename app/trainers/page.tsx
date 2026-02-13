@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Award, Zap, Users, Star, CheckCircle, MapPin, Clock, ChevronRight, Dumbbell } from "lucide-react";
+import { Heart, Award, Star, CheckCircle, MapPin, Clock, ChevronRight, Dumbbell } from "lucide-react";
 
 export default function TrainersPage() {
   const trainers = [
@@ -240,45 +240,6 @@ export default function TrainersPage() {
         </div>
       </section>
 
-      {/* Trainer Expertise - Specialties */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Training Specialties</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground">
-              Expert guidance in your area of focus
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: Zap, title: "Strength Training", desc: "Build muscle and increase power" },
-              { icon: Heart, title: "Cardio & Endurance", desc: "Improve heart health and stamina" },
-              { icon: Award, title: "Weight Management", desc: "Achieve sustainable results" },
-              { icon: Users, title: "Group Classes", desc: "Community-based fitness fun" },
-              { icon: Dumbbell, title: "Sports Training", desc: "Athletic performance enhancement" },
-              { icon: CheckCircle, title: "Nutrition Coaching", desc: "Complete wellness support" },
-            ].map((specialty, index) => {
-              const Icon = specialty.icon;
-              return (
-                <Card key={index} className="border-border hover:border-[var(--yellow)] transition-all group">
-                  <CardHeader>
-                    <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center group-hover:bg-[var(--yellow)]/20 transition-colors mb-4">
-                      <Icon className="w-7 h-7 text-[var(--yellow)]" />
-                    </div>
-                    <CardTitle className="text-foreground">{specialty.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{specialty.desc}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Our Trainers - Alternating Layout */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto space-y-20">
@@ -397,34 +358,6 @@ export default function TrainersPage() {
         </div>
       </section>
 
-      {/* Training Sessions Info */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Training Session Options</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {[
-              { label: "Session Duration", value: "30-60 min", icon: Clock },
-              { label: "Locations", value: "All Zones", icon: MapPin },
-              { label: "Availability", value: "All Hours", icon: Heart },
-              { label: "Customization", value: "100%", icon: Award },
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Card key={index} className="border-border hover:border-[var(--yellow)] transition-all text-center p-6">
-                  <Icon className="w-12 h-12 text-[var(--yellow)] mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground mb-2">{item.label}</p>
-                  <p className="text-2xl font-bold text-foreground">{item.value}</p>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Trainer Gallery */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
@@ -457,73 +390,6 @@ export default function TrainersPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Training Packages */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Training Packages</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="border-border hover:border-[var(--yellow)] transition-all">
-              <CardHeader>
-                <CardTitle className="text-foreground">Single Session</CardTitle>
-                <CardDescription>One-time training</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-[var(--yellow)]">KES 2,500</p>
-                  <p className="text-sm text-muted-foreground">per 60-min session</p>
-                </div>
-                <Button className="w-full bg-[var(--yellow)] text-black hover:bg-yellow-300">
-                  Book Session
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border hover:border-[var(--yellow)] transition-all ring-2 ring-[var(--yellow)]/50">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <CardTitle className="text-foreground">Monthly Plan</CardTitle>
-                    <CardDescription>Most Popular</CardDescription>
-                  </div>
-                  <span className="text-xs bg-[var(--yellow)] text-black px-2 py-1 rounded font-semibold">
-                    BEST VALUE
-                  </span>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-[var(--yellow)]">KES 8,000</p>
-                  <p className="text-sm text-muted-foreground">4 sessions per month</p>
-                </div>
-                <Button className="w-full bg-[var(--yellow)] text-black hover:bg-yellow-300">
-                  Subscribe Now
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border hover:border-[var(--yellow)] transition-all">
-              <CardHeader>
-                <CardTitle className="text-foreground">Intensive Program</CardTitle>
-                <CardDescription>3 months</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-[var(--yellow)]">KES 20,000</p>
-                  <p className="text-sm text-muted-foreground">2 sessions per week</p>
-                </div>
-                <Button className="w-full bg-[var(--yellow)] text-black hover:bg-yellow-300">
-                  Get Started
-                </Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
