@@ -6,11 +6,11 @@
  */
 
 export const brandColors = {
-  primary: 'var(--primary)',      // Orange
+  primary: 'var(--primary)',      // Black
   secondary: 'var(--secondary)',  // Yellow
   accent: 'var(--accent)',        // Yellow
   yellow: 'var(--yellow)',        // Brand yellow
-  orange: 'var(--orange)',        // Brand orange
+  black: 'var(--black)',          // Brand black
   background: 'var(--background)',
   foreground: 'var(--foreground)',
   muted: 'var(--muted)',
@@ -26,14 +26,14 @@ export const brandColors = {
  * <div style={{ color: brandColors.primary }}>Text</div>
  * 
  * In className with CSS variables:
- * <div className="bg-[var(--orange)] text-white">Text</div>
+ * <div className="bg-[var(--black)] text-white">Text</div>
  * 
  * In Tailwind (with opacity):
- * <div className="bg-orange-600 text-white">Text</div>
+ * <div className="bg-black text-white">Text</div>
  * 
  * In CSS files:
  * .my-element {
- *   color: var(--primary);
- *   background: var(--secondary);
+ *   color: var(--primary);     // Black
+ *   background: var(--secondary);  // Yellow
  * }
  */

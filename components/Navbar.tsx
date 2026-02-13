@@ -13,8 +13,12 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
+    { name: "Steam", href: "/steam" },
+    { name: "Sauna", href: "/sauna" },
+    { name: "Massage", href: "/massage" },
     { name: "Classes", href: "/classes" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Equipment", href: "/equipment" },
+    { name: "Trainers", href: "/trainers" },
   ];
 
   return (
@@ -24,10 +28,13 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--orange)] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--black)] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">F</span>
               </div>
-              <span className="font-bold text-lg hidden sm:inline">Fitness</span>
+              <div className="hidden sm:flex flex-col">
+                <span className="font-bold text-sm leading-tight">Overland Fitness</span>
+                <span className="text-xs text-muted-foreground">Ladies Only Gym</span>
+              </div>
             </Link>
           </div>
 

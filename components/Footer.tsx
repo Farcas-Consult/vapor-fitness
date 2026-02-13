@@ -10,15 +10,15 @@ export default function Footer() {
   const links = {
     quickLinks: [
       { name: "Home", href: "/" },
-      { name: "Classes", href: "/classes" },
-      { name: "Gallery", href: "/gallery" },
-      { name: "Contact", href: "/contact" },
+      { name: "Steam", href: "/steam" },
+      { name: "Sauna", href: "/sauna" },
+      { name: "Massage", href: "/massage" },
     ],
     company: [
-      { name: "About Us", href: "/about" },
-      { name: "Memberships", href: "/memberships" },
+      { name: "Classes", href: "/classes" },
+      { name: "Equipment", href: "/equipment" },
       { name: "Trainers", href: "/trainers" },
-      { name: "Blog", href: "/blog" },
+      { name: "Contact", href: "/contact" },
     ],
   };
 
@@ -37,10 +37,13 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--orange)] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--black)] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">F</span>
               </div>
-              <span className="font-bold text-lg">Overland Fitness</span>
+              <div>
+                <span className="font-bold text-lg block">Overland Fitness</span>
+                <span className="text-xs text-muted-foreground">Ladies Only Gym</span>
+              </div>
             </Link>
             <p className="text-sm text-muted-foreground">
               Transform your fitness journey with our state-of-the-art facilities and expert trainers.
@@ -105,10 +108,10 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-muted-foreground">Phone</p>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+254118814597"
                     className="text-sm text-foreground hover:text-primary transition-colors"
                   >
-                    +1 (234) 567-890
+                    +254 118 814 597
                   </a>
                 </div>
               </li>
@@ -128,7 +131,10 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground">Location</p>
-                  <p className="text-sm text-foreground">123 Fitness St, City, State 12345</p>
+                  <p className="text-sm text-foreground">
+                    Overland Towers, Ground Floor<br />
+                    Kirongothi Street
+                  </p>
                 </div>
               </li>
             </ul>
