@@ -117,6 +117,51 @@
     --sidebar-ring: var(--black);
 }
 
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(-40px) translateX(-10px);
+    }
+    75% {
+        transform: translateY(-20px) translateX(10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@layer components {
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+    .animate-fade-in {
+        animation: fadeIn 1s ease-out forwards;
+    }
+    .animation-delay-1 {
+        animation-delay: 0.3s;
+    }
+    .animation-delay-2 {
+        animation-delay: 0.6s;
+    }
+    .animation-delay-3 {
+        animation-delay: 0.9s;
+    }
+}
+
 @layer base {
     * {
         @apply border-border outline-ring/50;
