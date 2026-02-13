@@ -395,19 +395,30 @@ export default function TrainersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[var(--yellow)] via-yellow-200 to-[var(--yellow)]">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-black">Ready to Transform Your Fitness?</h2>
-          <p className="text-lg text-black/80 max-w-2xl mx-auto">
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-cover bg-center overflow-hidden" style={{backgroundImage: "var(--cta-bg-image, linear-gradient(135deg, #1f2937 0%, #111827 100%))"}}>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+        {/* Animated Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 animate-pulse"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48 animate-pulse animation-delay-2"></div>
+        
+        {/* Floating Accent Shapes */}
+        <div className="absolute top-20 right-20 w-16 h-16 rounded-full border-4 border-white/20 animate-float"></div>
+        <div className="absolute bottom-20 right-32 w-20 h-20 rounded-full border-4 border-white/20 animate-float animation-delay-3"></div>
+        <div className="absolute top-40 left-10 w-12 h-12 rounded-full border-3 border-white/20 animate-float animation-delay-1"></div>
+        
+        <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Transform Your Fitness?</h2>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">
             Book a session with one of our expert trainers today and start your transformation journey
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
-              <Button size="lg" className="bg-black text-white hover:bg-black/90">
+              <Button size="lg" className="bg-white text-black hover:bg-white/90">
                 Book Your First Session
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-black text-black hover:bg-black/10">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               Call: +254 118 814 597
             </Button>
           </div>

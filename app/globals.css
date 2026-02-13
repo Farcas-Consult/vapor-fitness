@@ -144,12 +144,28 @@
     }
 }
 
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 @layer components {
     .animate-float {
         animation: float 6s ease-in-out infinite;
     }
     .animate-fade-in {
         animation: fadeIn 1s ease-out forwards;
+    }
+    .animate-gradient-shift {
+        background-size: 200% 200%;
+        animation: gradientShift 6s ease infinite;
     }
     .animation-delay-1 {
         animation-delay: 0.3s;
