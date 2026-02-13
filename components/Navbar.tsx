@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
+import OverlandLogo from "@/assets/Overland_Logo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +30,13 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--black)] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">F</span>
-              </div>
+              <Image
+                src={OverlandLogo}
+                alt="Overland Fitness Logo"
+                width={40}
+                height={40}
+                className="rounded-lg object-cover"
+              />
               <div className="hidden sm:flex flex-col">
                 <span className="font-bold text-sm leading-tight">Overland Fitness</span>
                 <span className="text-xs text-muted-foreground">Ladies Only Gym</span>

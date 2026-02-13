@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import OverlandLogo from "@/assets/Overland_Logo.jpeg";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -37,9 +39,13 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[var(--yellow)] to-[var(--black)] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">F</span>
-              </div>
+              <Image
+                src={OverlandLogo}
+                alt="Overland Fitness Logo"
+                width={40}
+                height={40}
+                className="rounded-lg object-cover"
+              />
               <div>
                 <span className="font-bold text-lg block">Overland Fitness</span>
                 <span className="text-xs text-muted-foreground">Ladies Only Gym</span>
