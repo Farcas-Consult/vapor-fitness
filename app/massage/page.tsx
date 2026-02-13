@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Hand, Heart, Wind, Droplets, Zap, Users, MapPin, Clock, Star, ChevronRight } from "lucide-react";
+import { Hand, Heart, Wind, Droplets, Zap, Users, MapPin, Clock, ChevronRight } from "lucide-react";
 
 export default function MassagePage() {
   const massageTypes = [
@@ -21,24 +21,6 @@ export default function MassagePage() {
       name: "Hot Stone",
       temp: "Rejuvenating",
       icon: Droplets,
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Amara K.",
-      rating: 5,
-      text: "Best massage experience! The therapists are incredibly skilled and professional.",
-    },
-    {
-      name: "Priya M.",
-      rating: 5,
-      text: "I leave feeling completely relaxed and rejuvenated every single time.",
-    },
-    {
-      name: "Lisa J.",
-      rating: 5,
-      text: "The atmosphere is so calming. Highly recommend for stress relief!",
     },
   ];
 
@@ -214,7 +196,7 @@ export default function MassagePage() {
             <div className="space-y-6 order-2 lg:order-1">
               <h2 className="text-4xl font-bold text-foreground">Customized Wellness Plans</h2>
               <p className="text-lg text-muted-foreground">
-                Our experienced therapists work with you to create personalized massage packages that address your specific needs, whether it's chronic pain relief, sports recovery, or preventative wellness care.
+                Our experienced therapists work with you to create personalized massage packages that address your specific needs, whether it&apos;s chronic pain relief, sports recovery, or preventative wellness care.
               </p>
               <ul className="space-y-3">
                 {[
@@ -267,71 +249,6 @@ export default function MassagePage() {
               <p className="text-muted-foreground mb-2">Ground Floor, Overland Towers</p>
               <p className="text-sm text-muted-foreground">Easy access and comfortable facilities</p>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Member Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">What Our Members Say</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-border hover:border-[var(--yellow)] transition-all group">
-                <CardHeader>
-                  <div className="h-20 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center mb-4 group-hover:shadow-lg transition-shadow">
-                    <p className="text-xs text-muted-foreground">[Member Photo]</p>
-                  </div>
-                  <CardTitle className="text-foreground">{testimonial.name}</CardTitle>
-                  <div className="flex gap-1 mt-2">
-                    {Array(testimonial.rating)
-                      .fill(0)
-                      .map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[var(--yellow)] text-[var(--yellow)]" />
-                      ))}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Facility Gallery</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground">
-              Explore our state-of-the-art massage therapy facilities
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "Treatment Room 1",
-              "Treatment Room 2",
-              "Relaxation Area",
-              "Premium Suite",
-            ].map((room, index) => (
-              <div
-                key={index}
-                className="h-64 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
-              >
-                <div className="text-center">
-                  <p className="text-muted-foreground">[{room}]</p>
-                  <p className="text-xs text-muted-foreground mt-2">Image to be added</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

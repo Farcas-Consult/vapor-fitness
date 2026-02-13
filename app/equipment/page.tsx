@@ -90,29 +90,6 @@ export default function EquipmentPage() {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Amara K.",
-      text: "The equipment here is top-notch! Everything is well-maintained and modern. Best gym setup in Nairobi!",
-      equipment: "Strength Machines",
-    },
-    {
-      name: "Priya M.",
-      text: "Love the variety of cardio equipment. The treadmills and bikes are next level. Never crowded enough to wait.",
-      equipment: "Cardio Equipment",
-    },
-    {
-      name: "Lisa J.",
-      text: "The free weight section is incredibly well-organized. All the weights I need from light to heavy.",
-      equipment: "Free Weights",
-    },
-    {
-      name: "Zainab N.",
-      text: "Staff are always maintaining the equipment. Everything is clean and works perfectly every time.",
-      equipment: "Full Facility",
-    },
-  ];
-
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -250,44 +227,6 @@ export default function EquipmentPage() {
         </div>
       </section>
 
-      {/* Facility Zones */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Training Zones</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground">
-              Explore our specialized zones, each designed for specific training goals
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {zones.map((zone, index) => (
-              <Card key={index} className="border-border hover:border-[var(--yellow)] transition-all group overflow-hidden">
-                {/* Zone Image Placeholder */}
-                <div className="h-72 bg-muted border-b-2 border-dashed border-border flex items-center justify-center group-hover:shadow-lg transition-shadow">
-                  <p className="text-muted-foreground text-center">{zone.image}</p>
-                </div>
-
-                <CardHeader>
-                  <CardTitle className="text-foreground text-2xl">{zone.name}</CardTitle>
-                </CardHeader>
-
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-2">Equipment Available:</h4>
-                    <p className="text-muted-foreground text-sm">{zone.equipment}</p>
-                  </div>
-                  <Button variant="outline" className="w-full border-[var(--yellow)] text-[var(--yellow)] hover:bg-[var(--yellow)]/10">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Why Quality Equipment Matters */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
@@ -400,68 +339,6 @@ export default function EquipmentPage() {
             <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all order-1 lg:order-2">
               <p className="text-muted-foreground text-center">[Maintenance & Care Image]</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Member Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">What Members Love About Our Equipment</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-border hover:border-[var(--yellow)] transition-all group">
-                <CardHeader>
-                  <CardTitle className="text-foreground">{testimonial.name}</CardTitle>
-                  <CardDescription className="text-[var(--yellow)] font-semibold">
-                    {testimonial.equipment}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Equipment Showcase Gallery */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Equipment Gallery</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground">
-              Close-up views of our premium equipment collection
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "Dumbbells Collection",
-              "Barbell Rack",
-              "Treadmill Row",
-              "Leg Press Machine",
-              "Cable Station",
-              "Cardio Machines",
-              "Kettlebell Display",
-              "Free Weight Area",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="h-64 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
-              >
-                <div className="text-center">
-                  <p className="text-muted-foreground">[{item}]</p>
-                  <p className="text-xs text-muted-foreground mt-2">Image to be added</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
