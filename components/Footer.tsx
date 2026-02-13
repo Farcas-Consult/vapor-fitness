@@ -110,7 +110,7 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground">Phone</p>
                   <a
@@ -122,7 +122,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
                   <a
@@ -134,7 +134,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 <div>
                   <p className="text-xs text-muted-foreground">Location</p>
                   <p className="text-sm text-foreground">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Wind, Droplets, Heart, Zap, Clock, Users, MapPin, ChevronRight } from "lucide-react";
 
@@ -83,13 +83,13 @@ export default function SteamPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80"></div>
 
         {/* Animated Background Elements */}
-        <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-blue-500/20 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-cyan-500/10 blur-3xl animate-pulse animation-delay-2"></div>
+        <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/20 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse animation-delay-2"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-400/30 mb-4">
-            <Wind className="w-4 h-4 text-blue-400 animate-bounce" />
-            <span className="text-sm font-semibold text-blue-300">Premium Steam Experience</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4">
+            <Wind className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
+            <span className="text-sm font-semibold text-[var(--yellow)]">Premium Steam Experience</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in">
@@ -117,15 +117,15 @@ export default function SteamPage() {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-3 gap-4 pt-12 max-w-2xl mx-auto">
-            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-blue-400/30 transition-colors">
+            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-[var(--yellow)]/30 transition-colors">
               <p className="text-[var(--yellow)] text-2xl font-bold mb-1">42°C</p>
               <p className="text-gray-400 text-sm">Perfect Temperature</p>
             </div>
-            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-blue-400/30 transition-colors">
+            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-[var(--yellow)]/30 transition-colors">
               <p className="text-[var(--yellow)] text-2xl font-bold mb-1">30min</p>
               <p className="text-gray-400 text-sm">Ideal Duration</p>
             </div>
-            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-blue-400/30 transition-colors">
+            <div className="p-4 rounded-lg bg-white/5 backdrop-blur border border-white/10 hover:border-[var(--yellow)]/30 transition-colors">
               <p className="text-[var(--yellow)] text-2xl font-bold mb-1">100%</p>
               <p className="text-gray-400 text-sm">Pure Relaxation</p>
             </div>
