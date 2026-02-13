@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import OverlandLogo from "@/assets/Overland_Logo.jpeg";
+import OverlandLogo from "@/assets/Overland_Logo.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
