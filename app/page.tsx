@@ -73,8 +73,15 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[var(--black)] to-[var(--black)] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-yellow-500/10 opacity-30"></div>
+      <section 
+        className="relative py-20 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
+        style={{
+          backgroundImage: `url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Home2.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
@@ -123,10 +130,12 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
-            <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
-              <p className="text-muted-foreground text-center">
-                [About Us Image - To be added]
-              </p>
+            <div className="rounded-lg h-96 overflow-hidden">
+              <img 
+                src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Home4.jpeg" 
+                alt="About Overland Fitness"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
