@@ -93,17 +93,17 @@ export default function EquipmentPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden group">
-        {/* Background Image Placeholder */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"
-          style={{
-            backgroundImage: "url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%23151515%22 width=%221200%22 height=%22800%22/></svg>')",
-          }}
-        ></div>
-
+      <section 
+        className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden group"
+        style={{
+          backgroundImage: `url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment1.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-500"></div>
 
         {/* Animated Background Elements */}
         <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
@@ -192,14 +192,19 @@ export default function EquipmentPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {equipment.map((item, index) => {
               const Icon = item.icon;
+              const imageNum = index + 2; // Equipment2 to Equipment13
               return (
                 <Card
                   key={index}
                   className="border-border hover:border-[var(--yellow)] transition-all duration-300 overflow-hidden group"
                 >
-                  {/* Equipment Image Placeholder */}
-                  <div className="h-56 bg-muted border-b-2 border-dashed border-border flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                    <p className="text-muted-foreground text-center">[{item.name} Image]</p>
+                  {/* Equipment Image */}
+                  <div className="h-56 overflow-hidden bg-muted border-b border-border group-hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src={`https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment${imageNum}.jpeg`}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   <CardHeader>
@@ -236,9 +241,13 @@ export default function EquipmentPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image Placeholder */}
-            <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all">
-              <p className="text-muted-foreground text-center">[Equipment Showcase Image]</p>
+            {/* Image */}
+            <div className="h-96 rounded-lg overflow-hidden bg-muted border border-border group hover:shadow-xl transition-all">
+              <img 
+                src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment14.jpeg"
+                alt="Equipment Showcase"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Content */}
@@ -335,9 +344,13 @@ export default function EquipmentPage() {
               </ul>
             </div>
 
-            {/* Image Placeholder */}
-            <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all order-1 lg:order-2">
-              <p className="text-muted-foreground text-center">[Maintenance & Care Image]</p>
+            {/* Image */}
+            <div className="h-96 rounded-lg overflow-hidden bg-muted border border-border group hover:shadow-xl transition-all order-1 lg:order-2">
+              <img 
+                src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment12.jpeg"
+                alt="Professional Maintenance"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

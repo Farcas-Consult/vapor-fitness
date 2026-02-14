@@ -142,8 +142,17 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="relative py-16 px-4 sm:px-6 lg:px-8 border-y border-border"
+        style={{
+          backgroundImage: `url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment12.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Overland Fitness</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto"></div>
@@ -174,8 +183,17 @@ export default function Home() {
       </section>
 
       {/* Featured Amenities Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
+      <section 
+        className="relative py-16 px-4 sm:px-6 lg:px-8"
+        style={{
+          backgroundImage: `url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment12.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground mb-4">Our Premium Amenities</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-4"></div>
