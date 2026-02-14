@@ -15,12 +15,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Steam", href: "/steam" },
-    { name: "Sauna", href: "/sauna" },
-    { name: "Massage", href: "/massage" },
+    { name: "Wellness", href: "/wellness" },
     { name: "Classes", href: "/classes" },
     { name: "Equipment", href: "/equipment" },
     { name: "Trainers", href: "/trainers" },
+    { name: "Membership", href: "/membership" },
   ];
 
   return (

@@ -154,7 +154,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Overland Fitness</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose Overland Fitness</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -165,15 +165,15 @@ export default function Home() {
                 <Users key={2} className="h-6 w-6 text-[var(--yellow)]" />,
               ];
               return (
-                <Card key={index} className="border-border">
+                <Card key={index} className="border-border bg-background/80 backdrop-blur-sm">
                   <CardHeader>
                     <div className="w-12 h-12 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
                       {icons[index]}
                     </div>
-                    <CardTitle className="text-foreground">{item.title}</CardTitle>
+                    <CardTitle className="text-white">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="text-white/80">{item.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -195,9 +195,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Premium Amenities</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">Our Premium Amenities</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-4"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-white/80 max-w-2xl mx-auto">
               Experience world-class facilities and services designed to support your complete fitness and wellness journey
             </p>
           </div>
@@ -213,15 +213,15 @@ export default function Home() {
               ];
               return (
                 <Link key={index} href={amenity.href}>
-                  <Card className="border-border hover:border-[var(--yellow)] transition-colors h-full cursor-pointer hover:shadow-lg">
+                  <Card className="border-border hover:border-[var(--yellow)] transition-colors h-full cursor-pointer hover:shadow-lg bg-background/80 backdrop-blur-sm">
                     <CardHeader>
                       <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
                         {amenityIcons[index]}
                       </div>
-                      <CardTitle className="text-foreground">{amenity.title}</CardTitle>
+                      <CardTitle className="text-white">{amenity.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">{amenity.description}</p>
+                      <p className="text-white/80">{amenity.description}</p>
                     </CardContent>
                   </Card>
                 </Link>

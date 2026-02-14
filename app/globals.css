@@ -92,6 +92,7 @@
     --popover-foreground: oklch(0.985 0 0);
     --primary: var(--black);
     --primary-foreground: oklch(1 0 0);
+    --yellow: oklch(0.88 0.235 96.09);
     --secondary: var(--yellow);
     --secondary-foreground: oklch(0.145 0 0);
     --muted: oklch(0.269 0 0);
@@ -156,6 +157,22 @@
     }
 }
 
+@keyframes blob {
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(20px, -50px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    75% {
+        transform: translate(50px, 50px) scale(1.05);
+    }
+}
+
 @layer components {
     .animate-float {
         animation: float 6s ease-in-out infinite;
@@ -167,6 +184,9 @@
         background-size: 200% 200%;
         animation: gradientShift 6s ease infinite;
     }
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
     .animation-delay-1 {
         animation-delay: 0.3s;
     }
@@ -175,6 +195,12 @@
     }
     .animation-delay-3 {
         animation-delay: 0.9s;
+    }
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
     }
 }
 
