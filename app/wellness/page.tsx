@@ -26,31 +26,31 @@ export default function WellnessPage() {
   ];
 
   const saunaTypes = [
-    { title: "Dry Heat Sauna", shortDesc: "Traditional wellness", temp: "80-90°C" },
-    { title: "Infrared Sauna", shortDesc: "Deep penetration", temp: "45-65°C" },
-    { title: "Steam Sauna", shortDesc: "Moist relaxation", temp: "40-50°C" },
+    { title: "Dry Heat Sauna", shortDesc: "Traditional wellness", temp: "80-90°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam2.jpeg" },
+    { title: "Infrared Sauna", shortDesc: "Deep penetration", temp: "45-65°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Sauna3.jpeg" },
+    { title: "Steam Sauna", shortDesc: "Moist relaxation", temp: "40-50°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam1.jpeg" },
   ];
 
   const massageTypes = [
-    { name: "Swedish Massage", temp: "Relaxing", icon: Hand },
-    { name: "Deep Tissue", temp: "Therapeutic", icon: Zap },
-    { name: "Hot Stone", temp: "Rejuvenating", icon: Droplets },
+    { name: "Swedish Massage", temp: "Relaxing", icon: Hand, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage1.jpg" },
+    { name: "Deep Tissue", temp: "Therapeutic", icon: Zap, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage2.jpg" },
+    { name: "Hot Stone", temp: "Rejuvenating", icon: Droplets, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage3.jpg" },
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden group">
-        {/* Background Image Placeholder */}
+        {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 group-hover:opacity-100 transition-opacity duration-500"
           style={{
-            backgroundImage: "url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%230f2f2f%22 width=%221200%22 height=%22800%22/></svg>')",
+            backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage+4.jpg')",
           }}
         ></div>
 
         {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
 
         {/* Animated Background Elements */}
         <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
@@ -134,9 +134,11 @@ export default function WellnessPage() {
                   {saunaTypes.map((sauna, index) => (
                     <div key={index} className="group cursor-pointer">
                       <div className="relative h-80 rounded-lg overflow-hidden mb-4 border border-border group-hover:border-[var(--yellow)] transition-all duration-300">
-                        <div className="absolute inset-0 bg-gradient-to-br from-orange-900/40 to-red-900/40 flex items-center justify-center">
-                          <p className="text-muted-foreground text-center text-lg">[{sauna.title} Image]</p>
-                        </div>
+                        <img
+                          src={sauna.image}
+                          alt={sauna.title}
+                          className="w-full h-full object-cover"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                           <p className="text-[var(--yellow)] text-sm font-semibold mb-2">Temperature</p>
                           <p className="text-white text-3xl font-bold">{sauna.temp}</p>
@@ -186,7 +188,9 @@ export default function WellnessPage() {
             </TabsContent>
 
             {/* Massage Tab */}
-            <TabsContent value="massage" className="space-y-16">
+            <TabsContent value="massage" className="space-y-16 relative" style={{backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage5.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+              <div className="absolute inset-0 bg-background/80"></div>
+              <div className="relative z-10">
               {/* Benefits Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {massageBenefits.map((benefit, index) => {
@@ -228,9 +232,13 @@ export default function WellnessPage() {
                         key={index}
                         className="group cursor-pointer rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
                       >
-                        {/* Image Placeholder */}
-                        <div className="relative h-72 bg-muted border-2 border-dashed border-border flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                          <p className="text-muted-foreground text-center">[{type.name} Image]</p>
+                        {/* Image */}
+                        <div className="relative h-72 bg-muted overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                          <img
+                            src={type.image}
+                            alt={type.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
 
                         {/* Card Info */}
@@ -273,6 +281,7 @@ export default function WellnessPage() {
                   <p className="text-muted-foreground mb-2">Ground Floor, Overland Towers</p>
                   <p className="text-sm text-muted-foreground">Easy access and comfortable facilities</p>
                 </Card>
+              </div>
               </div>
             </TabsContent>
           </Tabs>
