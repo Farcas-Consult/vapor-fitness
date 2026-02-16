@@ -99,7 +99,9 @@ export default function WellnessPage() {
             </TabsList>
 
             {/* Sauna Tab */}
-            <TabsContent value="sauna" className="space-y-16">
+            <TabsContent value="sauna" className="space-y-16 relative" style={{backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/DrySauna.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
+              <div className="absolute inset-0 bg-background/80"></div>
+              <div className="relative z-10">
               {/* Benefits Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {saunaBenefits.map((benefit, index) => {
@@ -184,6 +186,7 @@ export default function WellnessPage() {
                   <p className="text-muted-foreground mb-2">2-3x per week</p>
                   <p className="text-sm text-muted-foreground">Allow recovery days between sessions</p>
                 </Card>
+              </div>
               </div>
             </TabsContent>
 
