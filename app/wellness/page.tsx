@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Flame, Hand, Heart, Zap, Droplets, Users, Clock, MapPin, ChevronRight, Star, Wind } from "lucide-react";
 
 export default function WellnessPage() {
-  const [selectedTab, setSelectedTab] = useState("sauna");
+
 
   const saunaBenefits = [
     { icon: Heart, title: "Heart Health", shortDesc: "Improve cardiovascular function" },
@@ -17,46 +17,32 @@ export default function WellnessPage() {
     { icon: Flame, title: "Metabolism", shortDesc: "Burn calories naturally" },
   ];
 
-  const massageBenefits = [
-    { icon: Hand, title: "Expert Therapists", desc: "Certified professionals with years of experience" },
-    { icon: Heart, title: "Pain Relief", desc: "Targeted therapy for muscle tension and discomfort" },
-    { icon: Wind, title: "Stress Reduction", desc: "Melt away daily stress and anxiety" },
-    { icon: Droplets, title: "Improved Circulation", desc: "Enhanced blood flow for better health" },
-    { icon: Zap, title: "Energy Boost", desc: "Feel revitalized and rejuvenated after each session" },
-  ];
-
   const saunaTypes = [
-    { title: "Dry Heat Sauna", shortDesc: "Traditional wellness", temp: "80-90°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam2.jpeg" },
-    { title: "Infrared Sauna", shortDesc: "Deep penetration", temp: "45-65°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Sauna3.jpeg" },
-    { title: "Steam Sauna", shortDesc: "Moist relaxation", temp: "40-50°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam1.jpeg" },
-  ];
-
-  const massageTypes = [
-    { name: "Swedish Massage", temp: "Relaxing", icon: Hand, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage1.jpg" },
-    { name: "Deep Tissue", temp: "Therapeutic", icon: Zap, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage2.jpg" },
-    { name: "Hot Stone", temp: "Rejuvenating", icon: Droplets, image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage3.jpg" },
+    { title: "Dry Heat Sauna", shortDesc: "Traditional wellness", temp: "80-90°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam5.jpeg" },
+    { title: "Steam", shortDesc: "Moist heat therapy", temp: "40-50°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam7.jpeg" },
+    { title: "Steam Sauna", shortDesc: "Moist relaxation", temp: "40-50°C", image: "https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam2.jpeg" },
   ];
 
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden group">
+      <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden group">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
           style={{
-            backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage+4.jpg')",
+            backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Saun2.jpeg')",
           }}
         ></div>
 
         {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
 
         {/* Animated Background Elements */}
         <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/5 blur-3xl animate-pulse animation-delay-2"></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
+        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in">
             <Zap className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
             <span className="text-sm font-semibold text-[var(--yellow)]">Complete Wellness Services</span>
@@ -72,7 +58,7 @@ export default function WellnessPage() {
 
           <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
             <Clock className="w-4 h-4 text-[var(--yellow)]" />
-            <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM MON - SUN</span>
+            <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM EVERYDAY</span>
           </p>
         </div>
       </section>
@@ -80,21 +66,14 @@ export default function WellnessPage() {
       {/* Tabs Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
-          <Tabs defaultValue="sauna" className="space-y-12" onValueChange={setSelectedTab}>
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 bg-card border border-border p-1 h-auto">
+          <Tabs defaultValue="sauna" className="space-y-12">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-1 bg-card border border-border p-1 h-auto">
               <TabsTrigger
                 value="sauna"
                 className="text-lg py-3 data-[state=active]:bg-[var(--yellow)] data-[state=active]:text-black"
               >
                 <Flame className="w-5 h-5 mr-2" />
-                Sauna
-              </TabsTrigger>
-              <TabsTrigger
-                value="massage"
-                className="text-lg py-3 data-[state=active]:bg-[var(--yellow)] data-[state=active]:text-black"
-              >
-                <Hand className="w-5 h-5 mr-2" />
-                Massage
+                Sauna & Steam
               </TabsTrigger>
             </TabsList>
 
@@ -190,103 +169,7 @@ export default function WellnessPage() {
               </div>
             </TabsContent>
 
-            {/* Massage Tab */}
-            <TabsContent value="massage" className="space-y-16 relative" style={{backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Massage5.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
-              <div className="absolute inset-0 bg-background/80"></div>
-              <div className="relative z-10">
-              {/* Benefits Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {massageBenefits.map((benefit, index) => {
-                  const Icon = benefit.icon;
-                  return (
-                    <Card
-                      key={index}
-                      className="border-border hover:border-[var(--yellow)] transition-all duration-300 hover:shadow-lg group cursor-pointer p-6"
-                    >
-                      <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center group-hover:bg-[var(--yellow)]/20 transition-colors flex-shrink-0">
-                          <Icon className="w-6 h-6 text-[var(--yellow)]" />
-                        </div>
-                        <div className="text-left">
-                          <h3 className="font-bold text-foreground group-hover:text-[var(--yellow)] transition-colors">{benefit.title}</h3>
-                          <p className="text-muted-foreground text-sm">{benefit.desc}</p>
-                        </div>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
 
-              {/* Massage Types */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold text-foreground mb-4">Our Massage Collection</h2>
-                  <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Explore our diverse range of therapeutic massage services tailored to your needs
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {massageTypes.map((type, index) => {
-                    const Icon = type.icon;
-                    return (
-                      <div
-                        key={index}
-                        className="group cursor-pointer rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
-                      >
-                        {/* Image */}
-                        <div className="relative h-72 bg-muted overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                          <img
-                            src={type.image}
-                            alt={type.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-
-                        {/* Card Info */}
-                        <Card className="border-border rounded-none hover:border-[var(--yellow)] transition-all">
-                          <CardHeader>
-                            <div className="flex items-center gap-3 mb-2">
-                              <div className="w-10 h-10 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center">
-                                <Icon className="w-5 h-5 text-[var(--yellow)]" />
-                              </div>
-                              <span className="text-xs font-semibold text-[var(--yellow)] uppercase">{type.temp}</span>
-                            </div>
-                            <CardTitle className="text-foreground text-2xl">{type.name}</CardTitle>
-                          </CardHeader>
-                        </Card>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Massage Features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="border-border hover:border-[var(--yellow)] transition-all text-center p-8">
-                  <Clock className="w-12 h-12 text-[var(--yellow)] mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Duration</h3>
-                  <p className="text-muted-foreground mb-2">30-90 minutes per session</p>
-                  <p className="text-sm text-muted-foreground">Customizable length based on your needs</p>
-                </Card>
-
-                <Card className="border-border hover:border-[var(--yellow)] transition-all text-center p-8">
-                  <Users className="w-12 h-12 text-[var(--yellow)] mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Frequency</h3>
-                  <p className="text-muted-foreground mb-2">1-4 times per week</p>
-                  <p className="text-sm text-muted-foreground">Recommended for optimal wellness benefits</p>
-                </Card>
-
-                <Card className="border-border hover:border-[var(--yellow)] transition-all text-center p-8">
-                  <MapPin className="w-12 h-12 text-[var(--yellow)] mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Location</h3>
-                  <p className="text-muted-foreground mb-2">Ground Floor, Overland Towers</p>
-                  <p className="text-sm text-muted-foreground">Easy access and comfortable facilities</p>
-                </Card>
-              </div>
-              </div>
-            </TabsContent>
           </Tabs>
         </div>
       </section>

@@ -189,43 +189,37 @@ export default function EquipmentPage() {
             </p>
           </div>
 
+          {/* Equipment List */}
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {equipment.map((item, index) => (
+                <div key={index} className="flex items-center gap-3 p-4 rounded-lg border border-border hover:border-[var(--yellow)] transition-all group cursor-pointer hover:bg-background/50">
+                  <Check className="w-5 h-5 text-[var(--yellow)] flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-foreground">{item.name}</p>
+                    <p className="text-sm text-muted-foreground">{item.range}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Equipment Gallery */}
+          <h3 className="text-3xl font-bold text-foreground mb-8 text-center">Equipment Gallery</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {equipment.map((item, index) => {
-              const Icon = item.icon;
               const imageNum = index + 2; // Equipment2 to Equipment13
               return (
-                <Card
+                <div
                   key={index}
-                  className="border-border hover:border-[var(--yellow)] transition-all duration-300 overflow-hidden group"
+                  className="h-64 rounded-lg overflow-hidden border border-border hover:border-[var(--yellow)] transition-all duration-300 group cursor-pointer hover:shadow-lg"
                 >
-                  {/* Equipment Image */}
-                  <div className="h-56 overflow-hidden bg-muted border-b border-border group-hover:scale-105 transition-transform duration-300">
-                    <img 
-                      src={`https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment${imageNum}.jpeg`}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center">
-                        <Icon className="w-5 h-5 text-[var(--yellow)]" />
-                      </div>
-                      <span className="text-xs font-bold bg-[var(--yellow)]/10 text-[var(--yellow)] px-3 py-1 rounded-full">
-                        {item.category}
-                      </span>
-                    </div>
-                    <CardTitle className="text-foreground text-xl">{item.name}</CardTitle>
-                  </CardHeader>
-
-                  <CardContent>
-                    <div className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[var(--yellow)]" />
-                      <p className="text-muted-foreground">{item.range}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                  <img 
+                    src={`https://overland-fitness.s3.eu-west-1.amazonaws.com/Equipment${imageNum}.jpeg`}
+                    alt={item.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
               );
             })}
           </div>
