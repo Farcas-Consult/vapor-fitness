@@ -1,12 +1,38 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Award, Star, CheckCircle, MapPin, Clock, ChevronRight, Dumbbell } from "lucide-react";
+import { Heart, Award, Star, CheckCircle, MapPin, Clock, ChevronRight, Dumbbell, Zap } from "lucide-react";
 
 export default function TrainersPage() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      
+      const rect = heroRef.current.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      
+      setMousePosition({ x, y });
+    };
+
+    const heroElement = heroRef.current;
+    if (heroElement) {
+      heroElement.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (heroElement) {
+        heroElement.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
   const trainers = [
     {
       id: 1,
@@ -106,44 +132,107 @@ export default function TrainersPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden group">
-        {/* Background Image Placeholder */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"></div>
+      <section 
+        ref={heroRef}
+        className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
+      >
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
 
-        {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Background Image Placeholder */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          style={{
+            backgroundImage: "url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%23122020%22 width=%221200%22 height=%22800%22/></svg>')",
+          }}
+        ></div>
 
         {/* Animated Background Elements */}
-        <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/5 blur-3xl animate-pulse animation-delay-2"></div>
+        <div 
+          className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/15 blur-3xl animate-pulse"
+          style={{
+            transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse animation-delay-2"
+          style={{
+            transform: `translate(${-mousePosition.x * 25}px, ${-mousePosition.y * 25}px)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-[var(--yellow)]/20 rounded-full animate-float"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 border-2 border-[var(--yellow)]/15 rounded-lg animate-float animation-delay-1" 
+          style={{
+            transform: `rotate(${mousePosition.x * 20}deg)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+        <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border-2 border-[var(--yellow)]/10 rounded-full animate-float animation-delay-2"></div>
+
+        {/* Light Overlay */}
+        <div className="absolute inset-0 bg-black/30"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in">
-            <Dumbbell className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
-            <span className="text-sm font-semibold text-[var(--yellow)]">Expert Fitness Professionals</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
+            <Dumbbell className="w-4 h-4 text-[var(--yellow)] animate-bounce group-hover:animate-spin" />
+            <span className="text-sm font-semibold text-[var(--yellow)] group-hover:text-yellow-300 transition-colors">Expert Fitness Professionals</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in">
+          <h1 
+            className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in"
+            style={{
+              transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg) rotateX(${-mousePosition.y * 5}deg)`,
+              transition: 'transform 0.3s ease-out',
+            }}
+          >
             Meet Our Trainers
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1 group-hover:text-gray-200 transition-colors">
             Our certified, passionate trainers are dedicated to helping you achieve your fitness goals and transform your life
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 animate-fade-in animation-delay-2">
-            <Link href="/contact">
+            <Link href="/contact" className="group/btn">
               <Button
                 size="lg"
-                className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
-                Book a Session
-                <ChevronRight className="ml-2 h-5 w-5" />
+                <span className="relative z-10 flex items-center gap-2">
+                  Book a Session
+                  <ChevronRight className="ml-1 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-yellow-400 -z-10 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></div>
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+            >
               View Specialties
+              <Zap className="ml-2 h-4 w-4 group-hover:text-[var(--yellow)] transition-colors" />
             </Button>
+          </div>
+
+          {/* Animated Stats */}
+          <div className="pt-12 grid grid-cols-3 gap-6 max-w-xl mx-auto">
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">6+</div>
+              <p className="text-sm text-gray-400 mt-1">Trainers</p>
+            </div>
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">50+</div>
+              <p className="text-sm text-gray-400 mt-1">Reviews</p>
+            </div>
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">100%</div>
+              <p className="text-sm text-gray-400 mt-1">Certified</p>
+            </div>
           </div>
         </div>
       </section>
@@ -240,89 +329,6 @@ export default function TrainersPage() {
         </div>
       </section>
 
-      {/* Why Choose Our Trainers - Alternating Layout */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto space-y-20">
-          {/* Feature 1 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all">
-              <p className="text-muted-foreground text-center">[Trainer Leading class]</p>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">Certified & Experienced</h2>
-              <p className="text-lg text-muted-foreground">
-                All our trainers hold internationally recognized certifications and bring 5-10 years of hands-on experience in fitness coaching.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "NASM, ACE, ISSA certified professionals",
-                  "Continuous professional development",
-                  "Specialized training in multiple disciplines",
-                  "Track record of member success",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Award className="w-5 h-5 text-[var(--yellow)]" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Feature 2 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 order-2 lg:order-1">
-              <h2 className="text-4xl font-bold text-foreground">Personalized Approach</h2>
-              <p className="text-lg text-muted-foreground">
-                Each trainer takes time to understand your goals, fitness level, and preferences to create a truly customized training experience.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "One-on-one fitness assessments",
-                  "Customized workout programming",
-                  "Regular progress evaluations",
-                  "Flexible scheduling and modifications",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[var(--yellow)]" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all order-1 lg:order-2">
-              <p className="text-muted-foreground text-center">[One-on-one training session]</p>
-            </div>
-          </div>
-
-          {/* Feature 3 */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="h-96 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all">
-              <p className="text-muted-foreground text-center">[Motivating trainer moment]</p>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-foreground">Passionate & Motivating</h2>
-              <p className="text-lg text-muted-foreground">
-                Our trainers aren't just professionals&mdash;they're passionate advocates for your success who celebrate every milestone with you.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Positive and encouraging environment",
-                  "Celebration of achievements",
-                  "Accountability partnerships",
-                  "Long-term success mentorship",
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Heart className="w-5 h-5 text-[var(--yellow)]" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Member Testimonials */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
@@ -353,42 +359,6 @@ export default function TrainersPage() {
                   <p className="text-muted-foreground italic">&ldquo;{testimonial.text}&rdquo;</p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trainer Gallery */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Training in Action</h2>
-            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground">
-              See our trainers making an impact on our members&apos; lives
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              "One-on-One Session 1",
-              "Group Training 1",
-              "Strength Coaching",
-              "Form Correction",
-              "Cardio Training",
-              "Progress Celebration",
-              "Outdoor Session",
-              "Member Milestone",
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="h-64 rounded-lg bg-muted border-2 border-dashed border-border flex items-center justify-center group hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
-              >
-                <div className="text-center">
-                  <p className="text-muted-foreground">[{item}]</p>
-                  <p className="text-xs text-muted-foreground mt-2">Image to be added</p>
-                </div>
-              </div>
             ))}
           </div>
         </div>

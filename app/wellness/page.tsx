@@ -1,14 +1,38 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Flame, Hand, Heart, Zap, Droplets, Users, Clock, MapPin, ChevronRight, Star, Wind } from "lucide-react";
 
 export default function WellnessPage() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      
+      const rect = heroRef.current.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      
+      setMousePosition({ x, y });
+    };
+
+    const heroElement = heroRef.current;
+    if (heroElement) {
+      heroElement.addEventListener('mousemove', handleMouseMove);
+    }
+
+    return () => {
+      if (heroElement) {
+        heroElement.removeEventListener('mousemove', handleMouseMove);
+      }
+    };
+  }, []);
 
   const saunaBenefits = [
     { icon: Heart, title: "Heart Health", shortDesc: "Improve cardiovascular function" },
@@ -26,40 +50,98 @@ export default function WellnessPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-black overflow-hidden group">
+      <section 
+        ref={heroRef}
+        className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
+      >
+        {/* Animated Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
+
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
             backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Saun2.jpeg')",
           }}
         ></div>
 
-        {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
-
         {/* Animated Background Elements */}
-        <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/5 blur-3xl animate-pulse animation-delay-2"></div>
+        <div 
+          className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/15 blur-3xl animate-pulse"
+          style={{
+            transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+        <div 
+          className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse animation-delay-2"
+          style={{
+            transform: `translate(${-mousePosition.x * 25}px, ${-mousePosition.y * 25}px)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8 px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in">
-            <Zap className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
-            <span className="text-sm font-semibold text-[var(--yellow)]">Complete Wellness Services</span>
+        {/* Floating Elements */}
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-[var(--yellow)]/20 rounded-full animate-float"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 border-2 border-[var(--yellow)]/15 rounded-lg animate-float animation-delay-1" 
+          style={{
+            transform: `rotate(${mousePosition.x * 20}deg)`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+        <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border-2 border-[var(--yellow)]/10 rounded-full animate-float animation-delay-2"></div>
+
+        {/* Light Overlay */}
+        <div className="absolute inset-0 bg-black/30"></div>
+
+        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
+            <Zap className="w-4 h-4 text-[var(--yellow)] animate-bounce group-hover:animate-spin" />
+            <span className="text-sm font-semibold text-[var(--yellow)] group-hover:text-yellow-300 transition-colors">Complete Wellness Services</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in">
+          <h1 
+            className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in"
+            style={{
+              transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg) rotateX(${-mousePosition.y * 5}deg)`,
+              transition: 'transform 0.3s ease-out',
+            }}
+          >
             Wellness & Recovery
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1 group-hover:text-gray-200 transition-colors">
             Experience the ultimate in relaxation and healing with our premium sauna and massage therapy services
           </p>
 
-          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
+          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2 animate-fade-in animation-delay-2">
             <Clock className="w-4 h-4 text-[var(--yellow)]" />
             <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM EVERYDAY</span>
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 animate-fade-in animation-delay-2">
+            <Link href="/contact" className="group/btn">
+              <Button
+                size="lg"
+                className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Book Now
+                  <ChevronRight className="ml-1 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-yellow-400 -z-10 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></div>
+              </Button>
+            </Link>
+            <a href="tel:+254118814597" className="group">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                Call: +254 118 814 597
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
