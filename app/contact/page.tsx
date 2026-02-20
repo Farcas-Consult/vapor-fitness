@@ -69,7 +69,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
+        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
       >
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
