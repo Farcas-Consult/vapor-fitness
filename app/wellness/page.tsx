@@ -52,29 +52,32 @@ export default function WellnessPage() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden"
+        className="relative h-screen px-4 sm:px-6 lg:px-8 bg-black overflow-hidden flex items-center justify-center"
       >
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
 
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Saun2.jpeg')",
-          }}
-        ></div>
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Wellness.mp4" type="video/mp4" />
+        </video>
 
         {/* Animated Background Elements */}
         <div 
-          className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/15 blur-3xl animate-pulse"
+          className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/15 blur-3xl"
           style={{
             transform: `translate(${mousePosition.x * 30}px, ${mousePosition.y * 30}px)`,
             transition: 'transform 0.3s ease-out'
           }}
         ></div>
         <div 
-          className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse animation-delay-2"
+          className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/10 blur-3xl"
           style={{
             transform: `translate(${-mousePosition.x * 25}px, ${-mousePosition.y * 25}px)`,
             transition: 'transform 0.3s ease-out'
@@ -82,26 +85,26 @@ export default function WellnessPage() {
         ></div>
 
         {/* Floating Elements */}
-        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-[var(--yellow)]/20 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/4 w-16 h-16 border-2 border-[var(--yellow)]/15 rounded-lg animate-float animation-delay-1" 
+        <div className="absolute top-1/4 left-1/4 w-20 h-20 border-2 border-[var(--yellow)]/20 rounded-full"></div>
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 border-2 border-[var(--yellow)]/15 rounded-lg" 
           style={{
             transform: `rotate(${mousePosition.x * 20}deg)`,
             transition: 'transform 0.3s ease-out'
           }}
         ></div>
-        <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border-2 border-[var(--yellow)]/10 rounded-full animate-float animation-delay-2"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border-2 border-[var(--yellow)]/10 rounded-full"></div>
 
         {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
-            <Zap className="w-4 h-4 text-[var(--yellow)] animate-bounce group-hover:animate-spin" />
+        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8 w-full">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
+            <Zap className="w-4 h-4 text-[var(--yellow)] group-hover:animate-spin" />
             <span className="text-sm font-semibold text-[var(--yellow)] group-hover:text-yellow-300 transition-colors">Complete Wellness Services</span>
           </div>
 
           <h1 
-            className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in"
+            className="text-5xl md:text-7xl font-bold text-white leading-tight"
             style={{
               transform: `perspective(1000px) rotateY(${mousePosition.x * 5}deg) rotateX(${-mousePosition.y * 5}deg)`,
               transition: 'transform 0.3s ease-out',
@@ -110,16 +113,16 @@ export default function WellnessPage() {
             Wellness & Recovery
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1 group-hover:text-gray-200 transition-colors">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto group-hover:text-gray-200 transition-colors">
             Experience the ultimate in relaxation and healing with our premium sauna and massage therapy services
           </p>
 
-          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2 animate-fade-in animation-delay-2">
+          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
             <Clock className="w-4 h-4 text-[var(--yellow)]" />
             <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM EVERYDAY</span>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 animate-fade-in animation-delay-2">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link href="/contact" className="group/btn">
               <Button
                 size="lg"
