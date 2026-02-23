@@ -52,21 +52,20 @@ export default function WellnessPage() {
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        className="relative h-screen px-4 sm:px-6 lg:px-8 bg-black overflow-hidden flex items-center justify-center"
+        className="relative h-150 md:h-175 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden flex items-center justify-center"
       >
-        {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
-
         {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Wellness.mp4" type="video/mp4" />
-        </video>
+        <div className="absolute inset-0 z-0">
+          <video
+            className="w-full h-full object-cover opacity-70"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Wellness.mp4" type="video/mp4" />
+          </video>
+        </div>
 
         {/* Animated Background Elements */}
         <div 
@@ -97,7 +96,7 @@ export default function WellnessPage() {
         {/* Light Overlay */}
         <div className="absolute inset-0 bg-black/10"></div>
 
-        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8 w-full">
+        <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
             <Zap className="w-4 h-4 text-[var(--yellow)] group-hover:animate-spin" />
             <span className="text-sm font-semibold text-[var(--yellow)] group-hover:text-yellow-300 transition-colors">Complete Wellness Services</span>

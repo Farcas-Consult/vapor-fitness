@@ -152,32 +152,31 @@ export default function MembershipPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black overflow-hidden group">
-        {/* Background Image Placeholder */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-50 group-hover:opacity-60 transition-opacity duration-500"
-          style={{
-            backgroundImage: "url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><rect fill=%22%230f2f2f%22 width=%221200%22 height=%22800%22/></svg>')",
-          }}
-        ></div>
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Overland2.mp4" type="video/mp4" />
+        </video>
 
         {/* Light Overlay */}
         <div className="absolute inset-0 bg-black/20"></div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute top-10 right-10 w-40 h-40 rounded-full bg-[var(--yellow)]/10 blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-[var(--yellow)]/5 blur-3xl animate-pulse animation-delay-2"></div>
-
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4">
+            <Sparkles className="w-4 h-4 text-[var(--yellow)]" />
             <span className="text-sm font-semibold text-[var(--yellow)]">Premium Membership Plans</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
             Choose Your Fitness Journey
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Flexible membership plans designed for every fitness level. Start your transformation today at Overland Fitness Ladies Only Gym.
           </p>
 

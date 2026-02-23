@@ -75,13 +75,21 @@ export default function Home() {
       {/* Hero Section */}
       <section 
         className="relative py-20 px-4 sm:px-6 lg:px-8 text-white overflow-hidden"
-        style={{
-          backgroundImage: `url('https://overland-fitness.s3.eu-west-1.amazonaws.com/Home2.jpeg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
       >
+        {/* Background Video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Overland1.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">

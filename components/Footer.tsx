@@ -25,10 +25,10 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Facebook, href: "https://facebook.com/overlandfitnessgym", label: "Facebook" },
+    { icon: Instagram, href: "https://instagram.com/overlandfitnessgym", label: "Instagram" },
+    { icon: Twitter, href: "https://twitter.com/overlandfitnessgym", label: "Twitter" },
+    { icon: Linkedin, href: "https://linkedin.com/company/overlandfitnessgym", label: "LinkedIn" },
   ];
 
   return (
