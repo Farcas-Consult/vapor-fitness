@@ -177,10 +177,10 @@ export default function Home() {
                     <div className="w-12 h-12 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
                       {icons[index]}
                     </div>
-                    <CardTitle className="text-white">{item.title}</CardTitle>
+                    <CardTitle className="text-foreground">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-white/80">{item.description}</p>
+                    <p className="text-muted-foreground">{item.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -225,10 +225,10 @@ export default function Home() {
                       <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
                         {amenityIcons[index]}
                       </div>
-                      <CardTitle className="text-white">{amenity.title}</CardTitle>
+                      <CardTitle className="text-foreground">{amenity.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-white/80">{amenity.description}</p>
+                      <p className="text-muted-foreground">{amenity.description}</p>
                     </CardContent>
                   </Card>
                 </Link>
