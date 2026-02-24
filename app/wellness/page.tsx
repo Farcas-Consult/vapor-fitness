@@ -137,7 +137,7 @@ export default function WellnessPage() {
             <a href="tel:+254118814597" className="group">
               <Button 
                 size="lg" 
-                variant="outline" 
+                
                 className="border-white/30 text-white hover:bg-white/20 hover:border-white/50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
                 Call: +254 118 814 597
@@ -282,7 +282,7 @@ export default function WellnessPage() {
                 Book a Session
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg"  className="border-white text-white hover:bg-white/10">
               Call: +254 118 814 597
             </Button>
           </div>

@@ -133,7 +133,7 @@ export default function EquipmentPage() {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+            <Button size="lg"  className="border-white/30 text-white hover:bg-white/10">
               Explore Equipment
             </Button>
           </div>
@@ -374,7 +374,7 @@ export default function EquipmentPage() {
                 Get Your Membership
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg"  className="border-white text-white hover:bg-white/10">
               Call: +254 118 814 597
             </Button>
           </div>

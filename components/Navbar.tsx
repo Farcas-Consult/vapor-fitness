@@ -18,7 +18,6 @@ export default function Navbar() {
     { name: "Wellness", href: "/wellness" },
     { name: "Classes", href: "/classes" },
     { name: "Equipment", href: "/equipment" },
-    { name: "Trainers", href: "/trainers" },
     { name: "Membership", href: "/membership" },
   ];
 

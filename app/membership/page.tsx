@@ -320,7 +320,7 @@ export default function MembershipPage() {
                 Join Today
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg"  className="border-white text-white hover:bg-white/10">
               Call: +254 118 814 597
             </Button>
           </div>

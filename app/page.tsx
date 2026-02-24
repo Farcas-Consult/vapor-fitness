@@ -107,7 +107,6 @@ export default function Home() {
               </Link>
               <Button
                 size="lg"
-                variant="outline"
                 className="border-white text-white hover:bg-white/10"
               >
                 Learn More
@@ -235,6 +234,54 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Trainers Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Expert Trainers</h2>
+            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-4"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our certified and experienced trainers are dedicated to helping you achieve your fitness goals with personalized guidance and support
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
+                  <Award className="h-7 w-7 text-[var(--yellow)]" />
+                </div>
+                <CardTitle>Certified Professionals</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">All trainers hold recognized fitness certifications and continuous education credentials</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
+                  <Users2 className="h-7 w-7 text-[var(--yellow)]" />
+                </div>
+                <CardTitle>Personalized Plans</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Customized workout and nutrition plans tailored to your individual goals and fitness level</p>
+              </CardContent>
+            </Card>
+            <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
+              <CardHeader>
+                <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
+                  <Sparkles className="h-7 w-7 text-[var(--yellow)]" />
+                </div>
+                <CardTitle>One-on-One Sessions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">Book personal training sessions for dedicated attention and expert form correction</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
