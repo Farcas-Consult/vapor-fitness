@@ -26,9 +26,54 @@ export default function MembershipPage() {
       ],
       popular: false,
     },
-   
-   
-   
+    {
+      id: "weekend",
+      name: "Weekend Pass",
+      price: "1,500",
+      duration: "Weekends",
+      description: "Perfect for weekend warriors",
+      color: "from-green-500 to-teal-500",
+      features: [
+        "Access to all gym facilities",
+        "Weekend access (Saturday & Sunday)",
+        "Locker & changing rooms",
+        "Water & hydration station",
+      ],
+      popular: false,
+    },
+    {
+      id: "weekly",
+      name: "Weekly Pass",
+      price: "2,500",
+      duration: "7 Days",
+      description: "A week of full access",
+      color: "from-cyan-500 to-blue-500",
+      features: [
+        "Unlimited gym access for 7 days",
+        "All classes included",
+        "Locker & changing rooms",
+        "Water & hydration station",
+        "Community events access",
+      ],
+      popular: false,
+    },
+    {
+      id: "two-weeks",
+      name: "2 Weeks",
+      price: "3,500",
+      duration: "14 Days",
+      description: "Extended short-term access",
+      color: "from-purple-500 to-pink-500",
+      features: [
+        "Unlimited gym access for 14 days",
+        "All classes included",
+        "Locker & changing rooms",
+        "Water & hydration station",
+        "Community events access",
+        "1 trainer consultation session",
+      ],
+      popular: false,
+    },
     {
       id: "monthly",
       name: "Monthly Pass",
