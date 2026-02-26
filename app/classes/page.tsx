@@ -198,7 +198,7 @@ export default function ClassesPage() {
                 className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Enroll Now
+                  Book Now
                   <ChevronRight className="ml-1 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-yellow-400 -z-10 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></div>
@@ -368,7 +368,7 @@ export default function ClassesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-black hover:bg-white/90">
-                Enroll Now
+            Book Now
               </Button>
             </Link>
             <Button size="lg"  className="border-white text-white hover:bg-white/10">

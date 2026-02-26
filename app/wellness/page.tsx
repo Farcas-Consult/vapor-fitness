@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Flame, Hand, Heart, Zap, Droplets, Users, Clock, MapPin, ChevronRight, Star, Wind } from "lucide-react";
+import { Flame, Heart, Zap, Droplets, Users, Clock, MapPin, ChevronRight, Star, Wind } from "lucide-react";
 
 export default function WellnessPage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -113,7 +112,7 @@ export default function WellnessPage() {
           </h1>
 
           <p className="text-xl text-gray-300 max-w-2xl mx-auto group-hover:text-gray-200 transition-colors">
-            Experience the ultimate in relaxation and healing with our premium sauna and massage therapy services
+            Experience the ultimate in relaxation and healing with our premium sauna and steam services
           </p>
 
           <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
@@ -147,114 +146,125 @@ export default function WellnessPage() {
         </div>
       </section>
 
-      {/* Tabs Section */}
+      {/* Wellness Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
-          <Tabs defaultValue="sauna" className="space-y-12">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-1 bg-card border border-border p-1 h-auto">
-              <TabsTrigger
-                value="sauna"
-                className="text-lg py-3 data-[state=active]:bg-[var(--yellow)] data-[state=active]:text-black"
-              >
-                <Flame className="w-5 h-5 mr-2" />
-                Sauna & Steam
-              </TabsTrigger>
-            </TabsList>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Steam & Sauna</h2>
+            <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Rejuvenate your body and mind with our premium wellness facilities designed for ultimate relaxation and recovery
+            </p>
+          </div>
 
-            {/* Sauna Tab */}
-            <TabsContent value="sauna" className="space-y-16 relative" style={{backgroundImage: "url('https://overland-fitness.s3.eu-west-1.amazonaws.com/DrySauna.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed'}}>
-              <div className="absolute inset-0 bg-background/80"></div>
-              <div className="relative z-10">
-              {/* Benefits Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {saunaBenefits.map((benefit, index) => {
-                  const Icon = benefit.icon;
-                  return (
-                    <Card
-                      key={index}
-                      className="border-border hover:border-[var(--yellow)] transition-all duration-300 hover:shadow-lg group cursor-pointer p-6"
-                    >
-                      <div className="flex flex-col items-center text-center gap-4">
-                        <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center group-hover:bg-[var(--yellow)]/20 transition-colors">
-                          <Icon className="w-7 h-7 text-[var(--yellow)]" />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-foreground text-lg">{benefit.title}</h3>
-                          <p className="text-muted-foreground text-sm">{benefit.shortDesc}</p>
-                        </div>
-                      </div>
-                    </Card>
-                  );
-                })}
-              </div>
-
-              {/* Sauna Types */}
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-4xl font-bold text-foreground mb-4">Our Sauna Collection</h2>
-                  <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto"></div>
+          {/* Sauna & Steam Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-stretch">
+            {/* Sauna */}
+            <div className="group">
+              <div className="relative h-96 rounded-xl overflow-hidden mb-6 border border-border group-hover:border-[var(--yellow)] transition-all duration-300">
+                <img
+                  src="https://overland-fitness.s3.eu-west-1.amazonaws.com/DrySauna.jpg"
+                  alt="Sauna"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Flame className="w-6 h-6 text-[var(--yellow)]" />
+                    <span className="text-[var(--yellow)] text-sm font-semibold">80-90°C</span>
+                  </div>
+                  <p className="text-white font-semibold text-lg">Dry Heat Sauna</p>
                 </div>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3">Sauna</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Experience deep, restorative heat in a space crafted for comfort and sophistication. Our sauna eases muscle tension, boosts recovery, and leaves your skin glowing. Train hard if you must but always recover in luxury.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-[var(--yellow)]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">15-25 minutes</p>
+                    <p className="text-xs text-muted-foreground">Build tolerance gradually</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-[var(--yellow)]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">2-3x per week</p>
+                    <p className="text-xs text-muted-foreground">For optimal benefits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {saunaTypes.map((sauna, index) => (
-                    <div key={index} className="group cursor-pointer">
-                      <div className="relative h-80 rounded-lg overflow-hidden mb-4 border border-border group-hover:border-[var(--yellow)] transition-all duration-300">
-                        <img
-                          src={sauna.image}
-                          alt={sauna.title}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                          <p className="text-[var(--yellow)] text-sm font-semibold mb-2">Temperature</p>
-                          <p className="text-white text-3xl font-bold">{sauna.temp}</p>
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-[var(--yellow)] transition-colors">
-                        {sauna.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">{sauna.shortDesc}</p>
-                      <Button variant="ghost" className="text-[var(--yellow)] hover:text-[var(--yellow)] hover:bg-[var(--yellow)]/10 p-0">
-                        Discover More <ChevronRight className="ml-2 h-4 w-4" />
-                      </Button>
+            {/* Steam */}
+            <div className="group">
+              <div className="relative h-96 rounded-xl overflow-hidden mb-6 border border-border group-hover:border-[var(--yellow)] transition-all duration-300">
+                <img
+                  src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Steam7.jpeg"
+                  alt="Steam"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Wind className="w-6 h-6 text-[var(--yellow)]" />
+                    <span className="text-[var(--yellow)] text-sm font-semibold">40-50°C</span>
+                  </div>
+                  <p className="text-white font-semibold text-lg">Moist Heat Steam</p>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-3">Steam</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Step into a serene steam sanctuary designed for pure relaxation and renewal. The gentle heat detoxifies, improves circulation, and melts away stress. Perfect for every body and fitness level.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-[var(--yellow)]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">15-25 minutes</p>
+                    <p className="text-xs text-muted-foreground">Gentle and accessible</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-[var(--yellow)]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground text-sm">3-4x per week</p>
+                    <p className="text-xs text-muted-foreground">Gentle enough for regular use</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Benefits Section */}
+          <div className="bg-card rounded-xl border border-border p-8 md:p-12">
+            <h3 className="text-2xl font-bold text-foreground text-center mb-10">Key Benefits</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {saunaBenefits.map((benefit, index) => {
+                const Icon = benefit.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mx-auto mb-3">
+                      <Icon className="w-7 h-7 text-[var(--yellow)]" />
                     </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Sauna Features */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="border-border text-center p-8 hover:shadow-lg hover:border-[var(--yellow)] transition-all group">
-                  <div className="w-16 h-16 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[var(--yellow)]/20 transition-colors">
-                    <Clock className="w-8 h-8 text-[var(--yellow)]" />
+                    <h4 className="font-semibold text-foreground text-sm mb-1">{benefit.title}</h4>
+                    <p className="text-xs text-muted-foreground">{benefit.shortDesc}</p>
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Duration</h3>
-                  <p className="text-muted-foreground mb-2">15-25 minutes</p>
-                  <p className="text-sm text-muted-foreground">Build tolerance gradually</p>
-                </Card>
-
-                <Card className="border-border text-center p-8 hover:shadow-lg hover:border-[var(--yellow)] transition-all group">
-                  <div className="w-16 h-16 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[var(--yellow)]/20 transition-colors">
-                    <Flame className="w-8 h-8 text-[var(--yellow)]" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Temperature</h3>
-                  <p className="text-muted-foreground mb-2">80-90°C (Dry Sauna)</p>
-                  <p className="text-sm text-muted-foreground">Adjustable based on preference</p>
-                </Card>
-
-                <Card className="border-border text-center p-8 hover:shadow-lg hover:border-[var(--yellow)] transition-all group">
-                  <div className="w-16 h-16 rounded-full bg-[var(--yellow)]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[var(--yellow)]/20 transition-colors">
-                    <Users className="w-8 h-8 text-[var(--yellow)]" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Frequency</h3>
-                  <p className="text-muted-foreground mb-2">2-3x per week</p>
-                  <p className="text-sm text-muted-foreground">Allow recovery days between sessions</p>
-                </Card>
-              </div>
-              </div>
-            </TabsContent>
-
-
-          </Tabs>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -274,7 +284,7 @@ export default function WellnessPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Transform Your Wellness?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Experience the healing power of our premium sauna and therapeutic massage services. Book your session today.
+            Experience the healing power of our premium sauna and steam services. Book your session today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">

@@ -10,7 +10,6 @@ import {
   Dumbbell, 
   Wind, 
   Flame, 
-  Hand, 
   BookOpen, 
   Users2, 
   ArrowRight,
@@ -31,11 +30,6 @@ export default function Home() {
       href: "/sauna",
     },
     {
-      title: "Massage",
-      description: "Professional massage therapy to relief tension and stress",
-      href: "/massage",
-    },
-    {
       title: "Classes",
       description: "Expert-led fitness classes for all levels and goals",
       href: "/classes",
@@ -54,19 +48,19 @@ export default function Home() {
 
   const whyChooseUs = [
     {
-      title: "Women-Focused Space",
+      title: "Exclusive Women's Sanctuary",
       description:
-        "A safe, supportive environment created exclusively for women to achieve their fitness goals",
+        "A luxurious, judgment-free space created entirely for women – where you can be yourself, train with confidence, and enjoy premium pampering without distractions",
     },
     {
-      title: "Premium Facility",
+      title: "Luxury Wellness Experience",
       description:
-        "State-of-the-art equipment and amenities designed for maximum comfort and results",
+        "Premium facilities featuring high-end equipment, indulgent recovery spaces with steam and sauna, and world-class amenities designed for the ultimate wellness lifestyle",
     },
     {
-      title: "Expert Support",
+      title: "Personalized Lifestyle Coaching",
       description:
-        "Dedicated trainers and staff committed to your success and well-being",
+        "Dedicated experts who guide your entire wellness journey, combining fitness with nutrition, recovery, and self-care for a holistic lifestyle transformation",
     },
   ];
 
@@ -93,10 +87,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Transform Your Fitness Journey
+              Elevate Your Luxury Wellness Lifestyle
             </h1>
             <p className="text-lg md:text-xl text-yellow-100 max-w-2xl mx-auto">
-              Join Overland Fitness, Kenya&apos;s premier ladies-only gym designed to empower women through fitness, wellness, and community support.
+              Welcome to Overland Fitness – Kenya&apos;s premier ladies-only sanctuary where luxury, wellness, and beauty converge. Experience the soft life while building strength, confidence, and community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Link href="/contact">
@@ -105,19 +99,21 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Button
-                size="lg"
-                className="border-white text-white hover:bg-white/10"
-              >
-                Learn More
-              </Button>
+              <a href="#about">
+                <Button
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10"
+                >
+                  Learn More
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
@@ -126,16 +122,12 @@ export default function Home() {
                 <div className="h-1 w-20 bg-[var(--yellow)] rounded"></div>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Overland Fitness is more than just a gym – we&apos;re a community dedicated to empowering women of all fitness levels to achieve their health and wellness goals.
+                Overland Fitness is more than just a gym – it&apos;s a luxury lifestyle destination crafted exclusively for women who refuse to compromise on comfort or results. We believe wellness is an experience to be savored.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Located in the heart of Nairobi at Overland Towers on Kirongothi Street, our facility combines world-class equipment with a supportive atmosphere exclusively for women. We believe fitness is a journey, not a destination.
+                Located in the heart of Nairobi at Overland Towers on Kirongothi Street, our state-of-the-art facility combines premium amenities, luxurious recovery spaces, and expert guidance in an environment designed entirely for women. Here, you strengthen your body while nurturing your spirit.
               </p>
-              <Link href="/about">
-                <Button variant="default" className="bg-[var(--black)] hover:bg-black/90">
-                  Read Our Story
-                </Button>
-              </Link>
+              
             </div>
             <div className="rounded-lg h-96 overflow-hidden">
               <img 
@@ -205,7 +197,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-white mb-4">Our Premium Amenities</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-4"></div>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Experience world-class facilities and services designed to support your complete fitness and wellness journey
+              Discover our curated collection of luxury facilities designed for relaxation, recovery, and rejuvenation – where every detail enhances your wellness lifestyle
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -213,10 +205,9 @@ export default function Home() {
               const amenityIcons = [
                 <Wind key={0} className="h-7 w-7 text-[var(--yellow)]" />,
                 <Flame key={1} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Hand key={2} className="h-7 w-7 text-[var(--yellow)]" />,
-                <BookOpen key={3} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Dumbbell key={4} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Users2 key={5} className="h-7 w-7 text-[var(--yellow)]" />,
+                <BookOpen key={2} className="h-7 w-7 text-[var(--yellow)]" />,
+                <Dumbbell key={3} className="h-7 w-7 text-[var(--yellow)]" />,
+                <Users2 key={4} className="h-7 w-7 text-[var(--yellow)]" />,
               ];
               return (
                 <Link key={index} href={amenity.href}>
@@ -245,7 +236,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold text-foreground mb-4">Our Expert Trainers</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-4"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our certified and experienced trainers are dedicated to helping you achieve your fitness goals with personalized guidance and support
+              Our certified experts craft personalized wellness experiences that balance strength, beauty, and self-care – empowering you to live your best luxury lifestyle
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -331,14 +322,14 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto relative z-10 text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-white animate-fade-in">
-            Ready to Transform?
+            Ready to Embrace the Luxury Life?
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto animate-fade-in animation-delay-1">
-            Join thousands of women who have already started their transformation journey at Overland Fitness. Take the first step today!
+            Join thousands of women living their best wellness lifestyle at Overland Fitness. Experience luxury, strength, and community – book your first session today!
           </p>
           <Link href="/contact" className="inline-block">
             <Button size="lg" className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              Get Started Now
+              Book Your Experience
               <ArrowRight className="ml-2 h-5 w-5 animate-bounce" />
             </Button>
           </Link>
@@ -359,7 +350,7 @@ export default function Home() {
               </div>
               <div className="text-left">
                 <p className="font-semibold text-sm">+254 118 814 597</p>
-                <p className="text-xs text-white/70">Call to book your free trial</p>
+                <p className="text-xs text-white/70">Reserve your luxury experience today</p>
               </div>
             </div>
           </div>

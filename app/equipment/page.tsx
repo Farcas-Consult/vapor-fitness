@@ -26,43 +26,43 @@ export default function EquipmentPage() {
     {
       name: "Free Weights",
       count: 4,
-      description: "Complete range from light to heavy dumbbells, barbells, and kettlebells for strength training",
+      description: "Elegant collection of premium dumbbells, barbells, and kettlebells for a luxury strength experience",
       icon: Dumbbell,
     },
     {
-      name: "Cardio Equipment",
+      name: "Cardio Wellness",
       count: 3,
-      description: "State-of-the-art treadmills, bikes, and rowing machines for cardiovascular fitness",
+      description: "Beautifully designed treadmills, bikes, and rowing machines for effortless cardiovascular wellness",
       icon: Zap,
     },
     {
-      name: "Strength Machines",
+      name: "Advanced Machines",
       count: 3,
-      description: "Advanced guided machines for safe, effective strength and muscle building",
+      description: "Sophisticated guided machines for graceful, comfortable strength and body sculpting",
       icon: Gauge,
     },
     {
-      name: "Flexibility & Recovery",
+      name: "Recovery & Wellness",
       count: 2,
-      description: "Yoga mats, foam rollers, and stretching equipment for recovery and flexibility",
+      description: "Premium yoga mats and recovery tools for luxurious stretching and rejuvenation",
       icon: Wind,
     },
   ];
 
   const features = [
     {
-      title: "Premium Quality",
-      description: "All equipment from industry-leading manufacturers",
+      title: "Luxury Quality",
+      description: "Premium equipment from elite manufacturers selected for elegance and exquisite performance",
       icon: Award,
     },
     {
-      title: "Regular Maintenance",
-      description: "Professional servicing ensures optimal performance",
+      title: "Premium Care",
+      description: "White-glove maintenance keeps every piece immaculate and perfectly functioning",
       icon: Shield,
     },
     {
-      title: "Expert Staff",
-      description: "Trained staff to assist with proper equipment use",
+      title: "Expert Guidance",
+      description: "Our specialists ensure you experience every piece with confidence and comfort",
       icon: Users,
     },
   ];
@@ -112,15 +112,15 @@ export default function EquipmentPage() {
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 animate-fade-in">
             <Dumbbell className="w-4 h-4 text-[var(--yellow)] animate-bounce" />
-            <span className="text-sm font-semibold text-[var(--yellow)]">State-of-the-Art Equipment</span>
+            <span className="text-sm font-semibold text-[var(--yellow)]">Premium Luxury Fitness Experience</span>
           </div>
 
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight animate-fade-in">
-            Premium Fitness Equipment
+            Elevate Your Fitness Lifestyle
           </h1>
 
           <p className="text-xl text-gray-300 max-w-2xl mx-auto animate-fade-in animation-delay-1">
-            Explore our comprehensive collection of professionally-maintained, top-tier fitness equipment designed to help you achieve your goals
+            Discover our curated collection of premium, beautifully-designed fitness equipment that transforms workouts into luxurious wellness experiences. Every piece selected for elegance, performance, and your comfort.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8 animate-fade-in animation-delay-2">
@@ -133,21 +133,23 @@ export default function EquipmentPage() {
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button size="lg"  className="border-white/30 text-white hover:bg-white/10">
-              Explore Equipment
-            </Button>
+            <a href="#categories">
+              <Button size="lg"  className="border-white/30 text-white hover:bg-white/10">
+                Explore Equipment
+              </Button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Equipment Categories */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+      <section id="categories" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Equipment Categories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Luxury Equipment Categories</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Discover our diverse range of equipment organized by fitness category
+              Explore our thoughtfully curated selection of premium equipment, each category designed for the ultimate wellness lifestyle
             </p>
           </div>
 
@@ -182,10 +184,10 @@ export default function EquipmentPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Complete Equipment List</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Complete Luxury Collection</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
             <p className="text-lg text-muted-foreground">
-              All items professionally maintained and ready for use
+              Premium equipment meticulously maintained for your comfort and pleasure
             </p>
           </div>
 
@@ -230,7 +232,7 @@ export default function EquipmentPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Quality Equipment Matters</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">The Luxury Equipment Difference</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
           </div>
 
@@ -248,20 +250,20 @@ export default function EquipmentPage() {
             <div className="space-y-8">
               {[
                 {
-                  title: "Safety & Durability",
-                  desc: "Premium equipment is built with safety standards and longevity in mind, reducing injury risk",
+                  title: "Exquisite Design",
+                  desc: "Beautifully crafted equipment that elevates your environment, making every workout a luxurious experience",
                 },
                 {
-                  title: "Consistent Performance",
-                  desc: "Professional-grade equipment maintains consistent resistance and stability for reliable workouts",
+                  title: "Superior Comfort",
+                  desc: "Premium ergonomic design ensures comfort and support, so you can focus on the experience, not discomfort",
                 },
                 {
-                  title: "Better Results",
-                  desc: "Quality equipment allows for precise movements and proper form, leading to faster progress",
+                  title: "Effortless Performance",
+                  desc: "Flawlessly maintained equipment means you can work out with complete confidence and peace of mind",
                 },
                 {
-                  title: "Optimal Maintenance",
-                  desc: "Regular professional servicing ensures every machine works perfectly every time",
+                  title: "Pristine Conditions",
+                  desc: "Impeccably clean and serviced equipment reflects our commitment to your wellness sanctuary",
                 },
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-4 group">
@@ -283,7 +285,7 @@ export default function EquipmentPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Our Equipment Standards</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Luxury Care Standards</h2>
             <div className="h-1 w-20 bg-[var(--yellow)] rounded mx-auto mb-6"></div>
           </div>
 
@@ -314,21 +316,21 @@ export default function EquipmentPage() {
             {/* Content */}
             <div className="space-y-8 order-2 lg:order-1">
               <div>
-                <h2 className="text-4xl font-bold text-foreground mb-4">Professional Maintenance</h2>
+                <h2 className="text-4xl font-bold text-foreground mb-4">Impeccable Care & Attention</h2>
                 <div className="h-1 w-20 bg-[var(--yellow)] rounded mb-6"></div>
               </div>
 
               <p className="text-lg text-muted-foreground">
-                Our dedicated maintenance team ensures every piece of equipment is in peak condition. Regular inspections, cleaning, and servicing guarantee optimal performance and safety.
+                Our dedicated care team treats every piece of equipment with the same attention to detail you deserve. Meticulous maintenance ensures your luxury wellness sanctuary is always pristine and perfectly maintained.
               </p>
 
               <ul className="space-y-3">
                 {[
-                  "Daily equipment cleaning and sanitization",
-                  "Weekly performance checks and adjustments",
-                  "Monthly professional maintenance and repairs",
-                  "Quarterly deep servicing and calibration",
-                  "Annual equipment replacement schedule",
+                  "Daily luxury-level cleaning and sanitization",
+                  "Weekly performance checks for optimal comfort",
+                  "Monthly premium maintenance and refinement",
+                  "Quarterly deep care and detailed servicing",
+                  "Annual refresh program to maintain elegance",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-[var(--yellow)] flex-shrink-0" />
@@ -364,9 +366,9 @@ export default function EquipmentPage() {
         <div className="absolute top-40 left-10 w-12 h-12 rounded-full border-3 border-white/20 animate-float animation-delay-1"></div>
         
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Train With Premium Equipment?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white">Experience Premium Fitness in Luxury</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Experience the difference quality equipment makes. Join Overland Fitness today and access our complete range of state-of-the-art equipment.
+            Discover how our exquisite equipment collection elevates your wellness lifestyle. Join Overland Fitness and experience fitness as it should be – beautifully, comfortably, and luxuriously.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
