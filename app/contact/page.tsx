@@ -210,12 +210,8 @@ export default function ContactPage() {
                 <Card className="border-border bg-card">
                   <CardContent className="pt-6 space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-foreground font-semibold">Monday - Friday:</span>
-                      <span className="text-[var(--yellow)] font-semibold">5:00 AM - 10:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-foreground font-semibold">Saturday - Sunday:</span>
-                      <span className="text-[var(--yellow)] font-semibold">6:00 AM - 8:00 PM</span>
+                      <span className="text-foreground font-semibold">Opening hours:</span>
+                      <span className="text-[var(--yellow)] font-semibold">6:00 AM - 10:00 PM everyday</span>
                     </div>
                   </CardContent>
                 </Card>

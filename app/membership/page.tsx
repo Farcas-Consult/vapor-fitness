@@ -154,7 +154,7 @@ export default function MembershipPage() {
         "Premium luxury member package",
         "Free monthly premium recovery services",
         "Exclusive wellness workshops",
-        "1 month free when renewing",
+        
       ],
       popular: false,
     },

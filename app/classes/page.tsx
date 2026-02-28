@@ -217,16 +217,17 @@ export default function ClassesPage() {
           {/* Animated Stats */}
           <div className="pt-12 grid grid-cols-3 gap-6 max-w-xl mx-auto">
             <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
-              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">6+</div>
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors animate-bounce-same">6+</div>
               <p className="text-sm text-gray-400 mt-1">Classes</p>
             </div>
             <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
-              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">24/7</div>
-              <p className="text-sm text-gray-400 mt-1">Access</p>
-            </div>
-            <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
-              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors">100%</div>
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors animate-bounce-same">100%</div>
               <p className="text-sm text-gray-400 mt-1">Results</p>
+            </div>
+            
+            <div className="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-[var(--yellow)]/30 hover:bg-white/10 transition-all duration-300 group/stat cursor-pointer">
+              <div className="text-3xl font-bold text-[var(--yellow)] group-hover/stat:text-yellow-300 transition-colors animate-bounce-same">∞</div>
+              <p className="text-sm text-gray-400 mt-1">Unlimited Access</p>
             </div>
           </div>
         </div>
