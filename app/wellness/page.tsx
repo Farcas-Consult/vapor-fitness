@@ -115,10 +115,7 @@ export default function WellnessPage() {
             Experience the ultimate in relaxation and healing with our premium sauna and steam services
           </p>
 
-          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
-            <Clock className="w-4 h-4 text-[var(--yellow)]" />
-            <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM EVERYDAY</span>
-          </p>
+
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link href="/contact" className="group/btn">
@@ -127,7 +124,7 @@ export default function WellnessPage() {
                 className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Book Now
+                  Contact Us
                   <ChevronRight className="ml-1 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-yellow-400 -z-10 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></div>
@@ -284,12 +281,12 @@ export default function WellnessPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Transform Your Wellness?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Experience the healing power of our premium sauna and steam services. Book your session today.
+            Interested in our premium sauna and steam services? Contact us today for more information and let us help you plan your perfect wellness experience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-black hover:bg-white/90">
-                Book a Session
+                Contact Us
               </Button>
             </Link>
             <Button size="lg"  className="border-white text-white hover:bg-white/10">

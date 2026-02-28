@@ -126,10 +126,10 @@ export default function Footer() {
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
                   <a
-                    href="mailto:info@overlandfitness.com"
+                    href="mailto:Overlandfitness001@gmail.com"
                     className="text-sm text-foreground hover:text-[var(--yellow)] transition-colors"
                   >
-                    info@overlandfitness.com
+                    Overlandfitness001@gmail.com
                   </a>
                 </div>
               </li>

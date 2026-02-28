@@ -107,7 +107,6 @@ export default function MembershipPage() {
         "VIP locker amenities",
         "Custom wellness & nutrition plan",
         "Quarterly wellness assessment",
-        "Priority class booking",
         "Guest privileges (4x/month)",
         "Luxury member gift",
       ],
@@ -121,13 +120,12 @@ export default function MembershipPage() {
       description: "Your wellness escape becomes a lifestyle",
       color: "from-rose-500 to-pink-500",
       features: [
-        "Unlimited sanctuary access 24/7",
+        "Unlimited sanctuary access",
         "All wellness classes included",
         "Weekly lifestyle coaching sessions",
         "VIP locker amenities",
         "Comprehensive wellness & nutrition plan",
         "Bi-monthly wellness assessment",
-        "Priority class booking",
         "Guest privileges (8x/month)",
         "Luxury member package",
         "Free premium recovery services",
@@ -143,13 +141,12 @@ export default function MembershipPage() {
       description: "Your complete wellness sanctuary membership",
       color: "from-amber-500 to-yellow-500",
       features: [
-        "Unlimited 24/7 sanctuary access",
+        "Unlimited sanctuary access",
         "All wellness classes included",
         "2x weekly lifestyle coaching sessions",
         "VIP exclusive locker amenities",
         "Complete wellness & nutrition planning",
         "Monthly wellness progress tracking",
-        "Priority class booking",
         "Unlimited guest privileges",
         "Premium luxury member package",
         "Free monthly premium recovery services",
@@ -225,10 +222,7 @@ export default function MembershipPage() {
             Flexible membership plans designed for every woman seeking luxury wellness, recovery, and the perfect soft life experience at Overland Fitness.
           </p>
 
-          <p className="text-sm text-gray-300 mb-4 flex items-center justify-center gap-2">
-            <Clock className="w-4 h-4 text-[var(--yellow)]" />
-            <span className="font-semibold">OPEN FROM 6:00AM - 10:00PM MON - SUN</span>
-          </p>
+
         </div>
       </section>
 
@@ -357,12 +351,12 @@ export default function MembershipPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Embrace the Luxury Life?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Join our exclusive community of women who prioritize wellness, beauty, and soft life at Overland Fitness Ladies Only Gym. Choose your perfect sanctuary and begin your luxury wellness journey today.
+            Interested in joining Overland Fitness? Contact us today for more information about our membership plans and find the perfect option for your wellness journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-black hover:bg-white/90">
-                Join Today
+                Contact Us
               </Button>
             </Link>
             <Button size="lg"  className="border-white text-white hover:bg-white/10">

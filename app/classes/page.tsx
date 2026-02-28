@@ -89,6 +89,43 @@ export default function ClassesPage() {
       description: "High-intensity interval training combining cardio and strength for a complete body transformation in minimal time.",
       benefits: ["Fast results", "Full-body workout", "Calorie burn", "Time efficient"],
     },
+    // New classes
+    {
+      id: 7,
+      name: "Spin",
+      icon: Users,
+      level: "All Levels",
+      duration: "45 min",
+      description: "A high-energy indoor cycling class designed to improve cardiovascular fitness and leg strength with motivating music.",
+      benefits: ["Cardio endurance", "Leg strength", "Low impact", "Motivating environment"],
+    },
+    {
+      id: 8,
+      name: "Tabata",
+      icon: Flame,
+      level: "Intermediate",
+      duration: "30 min",
+      description: "Intense interval training based on the Tabata protocol for maximum fat burning and fitness in a short time.",
+      benefits: ["Fat burning", "Time efficient", "Improved VO2 max", "Metabolic boost"],
+    },
+    {
+      id: 9,
+      name: "Circuit",
+      icon: Dumbbell,
+      level: "All Levels",
+      duration: "50 min",
+      description: "A full-body workout moving through a series of strength and cardio stations for overall fitness.",
+      benefits: ["Full-body workout", "Strength & cardio", "Variety", "Group motivation"],
+    },
+    {
+      id: 10,
+      name: "Steps Aerobics",
+      icon: Heart,
+      level: "Beginner",
+      duration: "40 min",
+      description: "Fun choreographed routines using a step platform to improve coordination, cardio, and lower body strength.",
+      benefits: ["Coordination", "Cardio fitness", "Lower body strength", "Fun routines"],
+    },
   ];
 
   const galleryImages = [
@@ -198,7 +235,7 @@ export default function ClassesPage() {
                 className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-110 hover:shadow-2xl relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Book Now
+                  Contact Us
                   <ChevronRight className="ml-1 h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-yellow-400 -z-10 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-300"></div>
@@ -364,12 +401,12 @@ export default function ClassesPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to Join Our Classes?</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Take the first step toward your fitness transformation. Enroll in a class today and start your journey with our supportive community.
+            Take the first step toward your fitness transformation. Contact us today for more information and start your journey with our supportive community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-black hover:bg-white/90">
-            Book Now
+                Contact Us
               </Button>
             </Link>
             <Button size="lg"  className="border-white text-white hover:bg-white/10">

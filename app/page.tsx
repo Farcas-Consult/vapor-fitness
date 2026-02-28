@@ -325,11 +325,11 @@ export default function Home() {
             Ready to Embrace the Luxury Life?
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto animate-fade-in animation-delay-1">
-            Join thousands of women living their best wellness lifestyle at Overland Fitness. Experience luxury, strength, and community – book your first session today!
+            Ready to experience luxury wellness at Overland Fitness? Contact us today for more information about our facilities, classes, and membership options.
           </p>
           <Link href="/contact" className="inline-block">
             <Button size="lg" className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-              Book Your Experience
+              Contact Us
               <ArrowRight className="ml-2 h-5 w-5 animate-bounce" />
             </Button>
           </Link>

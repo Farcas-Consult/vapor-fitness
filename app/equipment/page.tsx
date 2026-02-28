@@ -129,7 +129,7 @@ export default function EquipmentPage() {
                 size="lg"
                 className="bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all duration-300 hover:scale-105 hover:shadow-lg"
               >
-                Get Your Membership
+                Contact Us
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
@@ -368,12 +368,12 @@ export default function EquipmentPage() {
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Experience Premium Fitness in Luxury</h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
-            Discover how our exquisite equipment collection elevates your wellness lifestyle. Join Overland Fitness and experience fitness as it should be – beautifully, comfortably, and luxuriously.
+            Want to know more about our premium equipment and facilities? Contact us today and we&apos;ll be happy to answer any questions and guide you through everything Overland Fitness has to offer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-black hover:bg-white/90">
-                Get Your Membership
+                Contact Us
               </Button>
             </Link>
             <Button size="lg"  className="border-white text-white hover:bg-white/10">

@@ -53,14 +53,21 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+  };
+
+  const handleSend = (channel: "email" | "whatsapp") => {
+    const { name, email, phone, subject, message } = formData;
+    if (channel === "email") {
+      const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+      const mailtoLink = `mailto:Overlandfitness001@gmail.com?subject=${encodeURIComponent(subject || "Contact Form Enquiry")}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoLink, "_blank");
+    } else {
+      const text = `Hello Overland Fitness!\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\n\nMessage:\n${message}`;
+      const waLink = `https://wa.me/254118814597?text=${encodeURIComponent(text)}`;
+      window.open(waLink, "_blank");
+    }
     setSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
   };
 
@@ -183,7 +190,7 @@ export default function ContactPage() {
                     <Mail className="w-6 h-6 text-[var(--yellow)] flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold text-foreground">Email</p>
-                      <p className="text-muted-foreground">info@overlandfitness.com</p>
+                      <p className="text-muted-foreground">Overlandfitness001@gmail.com</p>
                       <p className="text-xs text-muted-foreground mt-1">Response within 24 hours</p>
                     </div>
                   </div>
@@ -326,15 +333,26 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all"
-                  >
-                    Send Message
-                    <Send className="ml-2 h-5 w-5" />
-                  </Button>
+                  {/* Submit Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button
+                      type="button"
+                      size="lg"
+                      onClick={() => handleSend("email")}
+                      className="flex-1 bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all"
+                    >
+                      Send via Email
+                      <Send className="ml-2 h-5 w-5" />
+                    </Button>
+                    <Button
+                      type="button"
+                      size="lg"
+                      onClick={() => handleSend("whatsapp")}
+                      className="flex-1 bg-green-500 text-white hover:bg-green-600 transition-all"
+                    >
+                      Send via WhatsApp
+                    </Button>
+                  </div>
                 </form>
               </div>
 
