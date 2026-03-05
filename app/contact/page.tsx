@@ -168,7 +168,111 @@ export default function ContactPage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Side - Contact Info, Hours, Social */}
+            {/* Left Side - Contact Form */}
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold text-foreground">Send us a Message</h2>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Name */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">Full Name</label>
+                  <Input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your full name"
+                    className="border-border focus:border-[var(--yellow)] transition-colors"
+                    required
+                  />
+                </div>
+
+                {/* Email */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">Email Address</label>
+                  <Input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="border-border focus:border-[var(--yellow)] transition-colors"
+                    required
+                  />
+                </div>
+
+                {/* Phone */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">Phone</label>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+254 7XX XXX XXX"
+                    className="border-border focus:border-[var(--yellow)] transition-colors"
+                  />
+                </div>
+
+                {/* Subject */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">Subject</label>
+                  <Input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="How can we help?"
+                    className="border-border focus:border-[var(--yellow)] transition-colors"
+                    required
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-foreground">Message</label>
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us more..."
+                    className="border-border focus:border-[var(--yellow)] transition-colors min-h-32 resize-none"
+                    required
+                  />
+                </div>
+
+                {/* Success Message */}
+                {submitted && (
+                  <div className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-600">
+                    <Send className="w-5 h-5" />
+                    <span className="text-sm font-semibold">Message sent successfully!</span>
+                  </div>
+                )}
+
+                {/* Submit Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Button
+                    type="button"
+                    size="lg"
+                    onClick={() => handleSend("email")}
+                    className="flex-1 bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all"
+                  >
+                    Send via Email
+                    <Send className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button
+                    type="button"
+                    size="lg"
+                    onClick={() => handleSend("whatsapp")}
+                    className="flex-1 bg-green-500 text-white hover:bg-green-600 transition-all"
+                  >
+                    Send via WhatsApp
+                  </Button>
+                </div>
+              </form>
+            </div>
+
+            {/* Right Side - Contact Info, Hours, Social */}
             <div className="space-y-8">
               {/* Contact Information */}
               <div className="space-y-6">
@@ -249,127 +353,29 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Side - Form & Map */}
-            <div className="space-y-8">
-              {/* Contact Form */}
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold text-foreground">Send us a Message</h2>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Name */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Full Name</label>
-                    <Input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      className="border-border focus:border-[var(--yellow)] transition-colors"
-                      required
-                    />
-                  </div>
-
-                  {/* Email */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Email Address</label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="your@email.com"
-                      className="border-border focus:border-[var(--yellow)] transition-colors"
-                      required
-                    />
-                  </div>
-
-                  {/* Phone */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Phone</label>
-                    <Input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="+254 7XX XXX XXX"
-                      className="border-border focus:border-[var(--yellow)] transition-colors"
-                    />
-                  </div>
-
-                  {/* Subject */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Subject</label>
-                    <Input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="How can we help?"
-                      className="border-border focus:border-[var(--yellow)] transition-colors"
-                      required
-                    />
-                  </div>
-
-                  {/* Message */}
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Message</label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us more..."
-                      className="border-border focus:border-[var(--yellow)] transition-colors min-h-32 resize-none"
-                      required
-                    />
-                  </div>
-
-                  {/* Success Message */}
-                  {submitted && (
-                    <div className="flex items-center gap-2 p-4 rounded-lg bg-green-500/10 border border-green-500/30 text-green-600">
-                      <Send className="w-5 h-5" />
-                      <span className="text-sm font-semibold">Message sent successfully!</span>
-                    </div>
-                  )}
-
-                  {/* Submit Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button
-                      type="button"
-                      size="lg"
-                      onClick={() => handleSend("email")}
-                      className="flex-1 bg-[var(--yellow)] text-black hover:bg-yellow-300 transition-all"
-                    >
-                      Send via Email
-                      <Send className="ml-2 h-5 w-5" />
-                    </Button>
-                    <Button
-                      type="button"
-                      size="lg"
-                      onClick={() => handleSend("whatsapp")}
-                      className="flex-1 bg-green-500 text-white hover:bg-green-600 transition-all"
-                    >
-                      Send via WhatsApp
-                    </Button>
-                  </div>
-                </form>
-              </div>
-
-              {/* Map */}
-              <div className="w-full h-96 rounded-lg border border-border overflow-hidden group hover:shadow-lg transition-all">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8216271566936!2d36.80404!3d-1.2874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a03c0f0001%3A0x4d63e9f6f6e9f6e9!2sKirongothi%20St%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                ></iframe>
-              </div>
-            </div>
+      {/* Map Section */}
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto space-y-4">
+          <div className="flex items-center gap-2">
+            <MapPin className="w-5 h-5 text-[var(--yellow)]" />
+            <h3 className="text-xl font-bold text-foreground">Find Us Here</h3>
+          </div>
+          <p className="text-muted-foreground">Visit us at Overland Towers, Kirongothi Street, Nairobi, Kenya – Ground Floor.</p>
+          <div className="w-full h-96 rounded-lg border border-border overflow-hidden hover:shadow-lg transition-all">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8216271566936!2d36.80404!3d-1.2874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10a03c0f0001%3A0x4d63e9f6f6e9f6e9!2sKirongothi%20St%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg"
+            ></iframe>
           </div>
         </div>
       </section>

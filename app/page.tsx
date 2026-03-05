@@ -159,9 +159,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyChooseUs.map((item, index) => {
               const icons = [
-                <Sparkles key={0} className="h-6 w-6 text-[var(--yellow)]" />,
-                <Award key={1} className="h-6 w-6 text-[var(--yellow)]" />,
-                <Users key={2} className="h-6 w-6 text-[var(--yellow)]" />,
+                <Sparkles key={0} className="h-6 w-6 text-[var(--yellow-icon)]" />,
+                <Award key={1} className="h-6 w-6 text-[var(--yellow-icon)]" />,
+                <Users key={2} className="h-6 w-6 text-[var(--yellow-icon)]" />,
               ];
               return (
                 <Card key={index} className="border-border bg-background/80 backdrop-blur-sm">
@@ -203,11 +203,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {amenities.map((amenity, index) => {
               const amenityIcons = [
-                <Wind key={0} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Flame key={1} className="h-7 w-7 text-[var(--yellow)]" />,
-                <BookOpen key={2} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Dumbbell key={3} className="h-7 w-7 text-[var(--yellow)]" />,
-                <Users2 key={4} className="h-7 w-7 text-[var(--yellow)]" />,
+                <Wind key={0} className="h-7 w-7 text-[var(--yellow-icon)]" />,
+                <Flame key={1} className="h-7 w-7 text-[var(--yellow-icon)]" />,
+                <BookOpen key={2} className="h-7 w-7 text-[var(--yellow-icon)]" />,
+                <Dumbbell key={3} className="h-7 w-7 text-[var(--yellow-icon)]" />,
+                <Users2 key={4} className="h-7 w-7 text-[var(--yellow-icon)]" />,
               ];
               return (
                 <Link key={index} href={amenity.href}>
@@ -243,7 +243,7 @@ export default function Home() {
             <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
               <CardHeader>
                 <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
-                  <Award className="h-7 w-7 text-[var(--yellow)]" />
+                  <Award className="h-7 w-7 text-[var(--yellow-icon)]" />
                 </div>
                 <CardTitle>Certified Professionals</CardTitle>
               </CardHeader>
@@ -254,7 +254,7 @@ export default function Home() {
             <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
               <CardHeader>
                 <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
-                  <Users2 className="h-7 w-7 text-[var(--yellow)]" />
+                  <Users2 className="h-7 w-7 text-[var(--yellow-icon)]" />
                 </div>
                 <CardTitle>Personalized Plans</CardTitle>
               </CardHeader>
@@ -265,7 +265,7 @@ export default function Home() {
             <Card className="border-border hover:border-[var(--yellow)] transition-colors bg-background/80 backdrop-blur-sm">
               <CardHeader>
                 <div className="w-14 h-14 rounded-lg bg-[var(--yellow)]/10 flex items-center justify-center mb-4">
-                  <Sparkles className="h-7 w-7 text-[var(--yellow)]" />
+                  <Sparkles className="h-7 w-7 text-[var(--yellow-icon)]" />
                 </div>
                 <CardTitle>One-on-One Sessions</CardTitle>
               </CardHeader>
@@ -336,7 +336,7 @@ export default function Home() {
           <div className="pt-8 flex flex-col sm:flex-row gap-6 justify-center text-white text-sm">
             <div className="flex items-center gap-3 justify-center sm:justify-start transform transition hover:scale-110 hover:translate-y-1 duration-300">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center animate-pulse">
-                <Clock className="h-5 w-5 text-[var(--yellow)]" />
+                <Clock className="h-5 w-5 text-[var(--yellow-icon)]" />
               </div>
               <div className="text-left">
                 <p className="font-semibold text-sm">Mon - Fri: 5AM - 10PM</p>
@@ -346,7 +346,7 @@ export default function Home() {
             <div className="hidden sm:block text-white/40">•</div>
             <div className="flex items-center gap-3 justify-center sm:justify-start transform transition hover:scale-110 hover:translate-y-1 duration-300">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center animate-pulse animation-delay-2">
-                <Zap className="h-5 w-5 text-[var(--yellow)]" />
+                <Zap className="h-5 w-5 text-[var(--yellow-icon)]" />
               </div>
               <div className="text-left">
                 <p className="font-semibold text-sm">+254 118 814 597</p>
