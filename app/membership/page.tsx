@@ -202,11 +202,8 @@ export default function MembershipPage() {
           loop
           playsInline
         >
-          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Overland2.mp4" type="video/mp4" />
+          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/OverlandFitness1.mp4" type="video/mp4" />
         </video>
-
-        {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4">

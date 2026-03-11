@@ -78,11 +78,10 @@ export default function Home() {
           loop
           playsInline
         >
-          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Overland1.mp4" type="video/mp4" />
+          <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/OverlandFitness.mp4" type="video/mp4" />
         </video>
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center space-y-6">

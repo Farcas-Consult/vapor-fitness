@@ -62,7 +62,7 @@ export default function WellnessPage() {
             loop
             playsInline
           >
-            <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/Wellness.mp4" type="video/mp4" />
+            <source src="https://overland-fitness.s3.eu-west-1.amazonaws.com/OverlandFitness2.mp4" type="video/mp4" />
           </video>
         </div>
 
@@ -92,8 +92,7 @@ export default function WellnessPage() {
         ></div>
         <div className="absolute bottom-1/4 right-1/3 w-24 h-24 border-2 border-[var(--yellow)]/10 rounded-full"></div>
 
-        {/* Light Overlay */}
-        <div className="absolute inset-0 bg-black/10"></div>
+
 
         <div className="max-w-5xl mx-auto relative z-10 text-center space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--yellow)]/20 border border-[var(--yellow)]/30 mb-4 hover:bg-[var(--yellow)]/30 hover:border-[var(--yellow)]/50 transition-all duration-300 cursor-pointer group">
